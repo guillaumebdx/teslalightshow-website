@@ -100,7 +100,7 @@ const features: Feature[] = [
       'Exportez en .fseq (natif Tesla), partagez vos créations avec la communauté et suivez le tutoriel intégré pour tout transférer sur votre véhicule.',
     gradient: 'from-indigo-500 to-violet-400',
     subFeatures: [
-      { text: 'Export .fseq — format natif Tesla compatible' },
+      { text: 'Export .fseq : format natif Tesla compatible' },
       { text: "Tutoriel d\u2019export guidé pas à pas en 4 étapes" },
       { text: 'Export MP3 du fichier audio associé' },
       { text: 'Partage communautaire via JSON (lightstudio_v1)' },
