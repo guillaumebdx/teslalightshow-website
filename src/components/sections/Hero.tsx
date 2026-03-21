@@ -1,8 +1,11 @@
-import { motion } from 'framer-motion'
-import { Play, Download } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Play, X } from 'lucide-react'
 import ModelViewer from '@/components/three/ModelViewer'
 
 export default function Hero() {
+  const [showDemo, setShowDemo] = useState(false)
+
   return (
     <section className="relative min-h-screen bg-surface">
       {/* Background gradient */}
@@ -28,7 +31,7 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border-light bg-surface-card/50 backdrop-blur-sm px-4 py-1.5 mb-5 lg:mb-8">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
             <span className="text-xs font-medium text-text-secondary">
-              Disponible maintenant
+              Accès anticipé
             </span>
           </div>
 
@@ -48,22 +51,15 @@ export default function Hero() {
             spectacles lumineux. Simple. Puissant. Intuitif.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center lg:items-start gap-3">
-            <a
-              href="#download"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 lg:px-7 lg:py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 hover:bg-primary-light hover:shadow-primary-light/25 transition-all duration-300"
-            >
-              <Download size={18} />
-              Télécharger gratuitement
-            </a>
-            <a
-              href="#preview"
+          {/* CTA */}
+          <div className="flex justify-center lg:justify-start">
+            <button
+              onClick={() => setShowDemo(true)}
               className="group inline-flex items-center gap-2 rounded-full border border-border-light bg-surface-card/50 backdrop-blur-sm px-6 py-3 lg:px-7 lg:py-3.5 text-sm font-semibold text-text-primary hover:bg-surface-elevated transition-all duration-300"
             >
               <Play size={18} className="text-primary-light" />
               Voir la démo
-            </a>
+            </button>
           </div>
         </motion.div>
 
@@ -93,6 +89,44 @@ export default function Hero() {
           />
         </div>
       </motion.div>
+
+      {/* Video demo modal */}
+      <AnimatePresence>
+        {showDemo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={() => setShowDemo(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-[min(90vw,360px)] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowDemo(false)}
+                className="absolute top-3 right-3 z-10 p-1.5 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                aria-label="Fermer"
+              >
+                <X size={20} />
+              </button>
+              <iframe
+                src="https://www.youtube.com/embed/KZTCjDbuN3A?autoplay=1&mute=1&loop=1&playlist=KZTCjDbuN3A&controls=1&rel=0"
+                className="w-full h-full"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="Démo LightShow Studio"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

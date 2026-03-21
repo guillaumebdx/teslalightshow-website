@@ -6,7 +6,6 @@ import logo from '@/assets/logo_transparent.png'
 const navLinks = [
   { label: 'Fonctionnalités', href: '#features' },
   { label: 'Aperçu', href: '#preview' },
-  { label: 'Tarifs', href: '#pricing' },
   { label: 'Contact', href: '#contact' },
 ]
 
