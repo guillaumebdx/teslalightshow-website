@@ -18,7 +18,7 @@ export default function Hero() {
       </div>
 
       {/* Layout: full-width wrapper, no padding constraint on 3D */}
-      <div className="relative z-10 h-screen flex flex-col lg:flex-row lg:items-center">
+      <div className="relative z-10 min-h-screen lg:h-screen flex flex-col lg:flex-row lg:items-center">
 
         {/* Text — padded, constrained width */}
         <motion.div
@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-          className="flex-1 min-h-0 lg:h-screen"
+          className="h-[50vh] lg:flex-1 lg:min-h-0 lg:h-screen"
         >
           <ModelViewer />
         </motion.div>
