@@ -26,7 +26,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="max-w-xl mx-auto text-text-secondary text-base lg:text-lg leading-relaxed mb-10">
-            Suggestion, bug, partenariat ou simplement dire bonjour — on vous répond rapidement.
+            Accès anticipé, suggestion, bug, partenariat ou simplement dire bonjour :) on vous répond rapidement.
           </p>
 
           <a
