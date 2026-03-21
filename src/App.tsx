@@ -1,5 +1,5 @@
 import { Layout } from '@/components/layout'
-import { Hero, Features, Preview } from '@/components/sections'
+import { Hero, Features, Preview, Contact, Download } from '@/components/sections'
 
 function App() {
   return (
@@ -7,6 +7,8 @@ function App() {
       <Hero />
       <Features />
       <Preview />
+      <Contact />
+      <Download />
     </Layout>
   )
 }
