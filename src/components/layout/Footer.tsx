@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-sm text-text-muted">
-            &copy; {new Date().getFullYear()} LightShow Studio
+            &copy; {new Date().getFullYear()} LightShow Studio &middot; Conçu et développé par Guillaume Harari
           </p>
         </div>
       </div>
