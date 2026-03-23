@@ -95,7 +95,9 @@ export default function ModelViewer() {
   }, [])
 
   return (
-    <div className="w-full h-full">
+    <div className="relative w-full h-full">
+      {/* On mobile, overlay a transparent div to block Canvas touch events and allow page scroll */}
+      {mobile && <div className="absolute inset-0 z-10" />}
       {mobile ? (
         <Canvas
           key="mobile"

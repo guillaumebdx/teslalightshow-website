@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "title": "LightShow Studio — Crea Light Shows Tesla espectaculares",
+    "description": "Crea, sincroniza y exporta light shows Tesla directamente desde tu iPhone. Modelo 3D interactivo, timeline de audio, generación IA y exportación .fseq nativa. Compatible con Model 3 y Model Y.",
+    "ogDescription": "La app iOS para crear light shows Tesla con un modelo 3D interactivo, timeline de audio y generación IA. Exportación .fseq nativa, compatible con Model 3/Y.",
+    "twitterTitle": "LightShow Studio — Light Shows Tesla desde tu iPhone",
+    "twitterDescription": "Modelo 3D, timeline de audio, IA generativa y exportación .fseq. Crea el espectáculo de luces perfecto para tu Tesla."
+  },
+  "nav": {
+    "features": "Características",
+    "preview": "Vista previa",
+    "contact": "Contacto",
+    "download": "Descargar",
+    "aria": "Navegación principal"
+  },
+  "hero": {
+    "badge": "Acceso anticipado",
+    "titleStart": "Crea ",
+    "titleHighlight": "light shows",
+    "titleEnd": "espectaculares",
+    "subtitle": "La herramienta profesional para diseñar, sincronizar y controlar tus espectáculos de luces. Simple. Potente. Intuitivo.",
+    "cta": "Ver la demo",
+    "closeAria": "Cerrar",
+    "videoTitle": "Demo de LightShow Studio"
+  },
+  "features": {
+    "label": "Características",
+    "titleStart": "Todo lo que necesitas para crear ",
+    "titleHighlight": "el show perfecto",
+    "subtitle": "Desde el modelado 3D hasta la exportación Tesla, incluyendo la generación IA: cada detalle ha sido pensado para una experiencia fluida e intuitiva.",
+    "showMore": "Saber más",
+    "showLess": "Ocultar detalles",
+    "groups": [
+      {
+        "title": "Creación de Light Show",
+        "description": "Controla individualmente 21 elementos: faros, intermitentes, ventanas, espejos, maletero y puerto de carga. Directamente en un modelo 3D interactivo.",
+        "subFeatures": [
+          "Modelo 3D fiel con rotación táctil, zoom y selección por tap",
+          "Faros, intermitentes, repetidores, luces de freno, antiniebla y matrícula",
+          "Ventanas animadas (window dance), espejos plegables, maletero y puerto de carga",
+          "Puerto de carga con LED arcoíris (rainbow)",
+          "Colores dedicados e indicadores visuales por pieza",
+          "Retroalimentación háptica al colocar y seleccionar",
+          "Model 3/Y disponible — Model S y SUV próximamente"
+        ]
+      },
+      {
+        "title": "Audio & Timeline",
+        "description": "Importa tu música o elige de la biblioteca integrada. Coloca y ajusta tus eventos en una timeline sincronizada con la forma de onda.",
+        "subFeatures": [
+          "Biblioteca de música integrada con forma de onda precalculada",
+          "Importación MP3 desde el teléfono (máx. 5 min) con análisis de audio automático",
+          "Timeline visual con código de colores por tipo de pieza",
+          "Colocación por tap, drag & drop con pulsación larga, eliminación de eventos",
+          "Reproducción sincronizada audio + animación 3D en tiempo real",
+          "Velocidad de reproducción variable: 0.5x a 2x",
+          "Zoom vertical ajustable (100% a 200%)"
+        ]
+      },
+      {
+        "title": "Efectos & Opciones",
+        "description": "Personaliza cada evento: efecto solid o blink, intensidad, fundidos, duración y modos especiales para maletero, ventanas, espejos y puerto de carga.",
+        "subFeatures": [
+          "Efectos Solid (continuo) y Blink (3 velocidades: 1x, 2x, 3x)",
+          "Potencia ajustable de 0 a 100%",
+          "Ease In / Ease Out: fundidos progresivos",
+          "Duración personalizable en segundos",
+          "Espejos: cerrar, abrir, ida y vuelta",
+          "Ventanas: window dance (oscilación)",
+          "Maletero: abrir (13s), cerrar (4s), dance (5s)",
+          "Puerto de carga: abrir, cerrar, LED arcoíris",
+          "Contador de comandos respetando los límites del hardware del vehículo"
+        ]
+      },
+      {
+        "title": "Generación por IA",
+        "description": "La IA analiza tu música y genera un light show completo sincronizado. Describe el estilo deseado o elige un preset.",
+        "subFeatures": [
+          "Generación automática completa sincronizada al audio",
+          "Prompt personalizado (máx. 500 caracteres) para describir tu visión",
+          "Presets: Fuegos artificiales, Ola, Fiesta, Spooky, Romántico, Agresivo",
+          "Animación de progreso en el modelo 3D durante la generación",
+          "Confirmación antes de reemplazar eventos existentes"
+        ]
+      },
+      {
+        "title": "Gestión de proyectos",
+        "description": "Guardado automático, duplicación, deshacer/rehacer hasta 50 niveles.",
+        "subFeatures": [
+          "Auto-guardado cada 1.5 segundos",
+          "Lista de proyectos con nombre, música, eventos y fecha",
+          "Duplicar, eliminar y renombrar tus shows",
+          "Undo / Redo — historial hasta 50 niveles",
+          "Tutorial interactivo en el primer lanzamiento (5 pasos, se puede omitir)"
+        ]
+      },
+      {
+        "title": "Exportar & Compartir",
+        "description": "Exporta en .fseq (formato nativo Tesla), comparte tus creaciones con la comunidad y sigue el tutorial integrado para transferir todo a tu vehículo.",
+        "subFeatures": [
+          "Exportación .fseq: formato nativo Tesla compatible",
+          "Tutorial de exportación paso a paso en 4 pasos",
+          "Exportación MP3 del archivo de audio asociado",
+          "Compartir con la comunidad via JSON (lightstudio_v1)",
+          "Importar shows compartidos por otros usuarios",
+          "6 colores de carrocería, modo luminoso, offset de cursor",
+          "4 idiomas: Francés, Inglés, Español, Alemán"
+        ]
+      }
+    ]
+  },
+  "preview": {
+    "label": "Vista previa",
+    "titleStart": "Diseñado para ser ",
+    "titleHighlight": "intuitivo",
+    "subtitle": "Una interfaz oscura y limpia, pensada para la creación móvil. Toca para ampliar.",
+    "closeAria": "Cerrar",
+    "prevAria": "Anterior",
+    "nextAria": "Siguiente",
+    "screenshots": [
+      "Timeline & opciones",
+      "Vista 3D & timeline",
+      "Puerto de carga & eventos",
+      "Generación IA",
+      "Ajustes avanzados"
+    ]
+  },
+  "contact": {
+    "label": "Contacto",
+    "titleStart": "¿Tienes una pregunta? ",
+    "titleHighlight": "Escríbenos",
+    "subtitle": "Acceso anticipado, sugerencia, bug, colaboración o simplemente saludar :) respondemos rápidamente."
+  },
+  "download": {
+    "label": "Descarga",
+    "titleStart": "¿Listo para crear ",
+    "titleHighlight": "tu show?",
+    "subtitle": "Descarga LightShow Studio gratis y empieza a crear espectáculos de luces para tu Tesla.",
+    "appStoreAlt": "Descargar en el App Store — Próximamente",
+    "playStoreAlt": "Disponible en Google Play — Próximamente"
+  },
+  "footer": {
+    "aria": "Pie de página",
+    "copyright": "© {{year}} LightShow Studio · Diseñado y desarrollado por Guillaume Harari"
+  }
+}

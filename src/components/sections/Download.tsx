@@ -1,9 +1,20 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 import appStoreBadge from '@/assets/preview/appstore.png'
 import playStoreBadge from '@/assets/preview/playstore.png'
 
+const APP_STORE_URLS: Record<string, string> = {
+  fr: 'https://apps.apple.com/fr/app/lightshow-studio/id6759118132',
+  en: 'https://apps.apple.com/us/app/lightshow-studio/id6759118132',
+  de: 'https://apps.apple.com/de/app/lightshow-studio/id6759118132',
+  es: 'https://apps.apple.com/es/app/lightshow-studio/id6759118132',
+}
+
 export default function Download() {
+  const { t, i18n } = useTranslation()
+  const appStoreUrl = APP_STORE_URLS[i18n.language.slice(0, 2)] ?? APP_STORE_URLS.en
+
   return (
     <section id="download" className="relative py-24 lg:py-32 bg-surface overflow-hidden">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -19,31 +30,33 @@ export default function Download() {
           className="text-center"
         >
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary-light mb-4">
-            Téléchargement
+            {t('download.label')}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Prêt à créer{' '}
+            {t('download.titleStart')}
             <span className="bg-gradient-to-r from-primary-light via-accent to-accent-light bg-clip-text text-transparent">
-              votre show ?
+              {t('download.titleHighlight')}
             </span>
           </h2>
           <p className="max-w-xl mx-auto text-text-secondary text-base lg:text-lg leading-relaxed mb-12">
-            Téléchargez LightShow Studio gratuitement et commencez à créer des spectacles lumineux pour votre Tesla.
+            {t('download.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <motion.a
-              href="#"
+              href={appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="hover:scale-[1.05] transition-transform duration-300"
-              aria-label="Télécharger sur l'App Store (bientôt disponible)"
+              aria-label={t('download.appStoreAlt')}
             >
               <img
                 src={appStoreBadge}
-                alt="Télécharger sur l'App Store — Coming Soon"
+                alt={t('download.appStoreAlt')}
                 className="h-16 sm:h-[72px] w-auto"
               />
             </motion.a>
@@ -55,11 +68,11 @@ export default function Download() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="hover:scale-[1.05] transition-transform duration-300"
-              aria-label="Disponible sur Google Play (bientôt disponible)"
+              aria-label={t('download.playStoreAlt')}
             >
               <img
                 src={playStoreBadge}
-                alt="Disponible sur Google Play — Coming Soon"
+                alt={t('download.playStoreAlt')}
                 className="h-16 sm:h-[72px] w-auto"
               />
             </motion.a>

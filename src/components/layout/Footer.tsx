@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next'
 import logo from '@/assets/logo_transparent.png'
 
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
-    <footer aria-label="Pied de page" className="border-t border-border bg-surface-light">
+    <footer aria-label={t('footer.aria')} className="border-t border-border bg-surface-light">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
@@ -15,14 +18,14 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-text-muted">
-            <a href="#features" className="hover:text-text-primary transition-colors">Fonctionnalités</a>
-            <a href="#preview" className="hover:text-text-primary transition-colors">Aperçu</a>
-            <a href="#contact" className="hover:text-text-primary transition-colors">Contact</a>
+            <a href="#features" className="hover:text-text-primary transition-colors">{t('nav.features')}</a>
+            <a href="#preview" className="hover:text-text-primary transition-colors">{t('nav.preview')}</a>
+            <a href="#contact" className="hover:text-text-primary transition-colors">{t('nav.contact')}</a>
           </div>
 
           {/* Copyright */}
           <p className="text-sm text-text-muted">
-            &copy; {new Date().getFullYear()} LightShow Studio &middot; Conçu et développé par Guillaume Harari
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

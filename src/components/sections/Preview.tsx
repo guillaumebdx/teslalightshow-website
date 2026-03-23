@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import imgTimeline1 from '@/assets/preview/timeline1.png'
 import imgTimeline2 from '@/assets/preview/timeline2.png'
@@ -8,13 +9,7 @@ import imgTimeline3 from '@/assets/preview/timeline3.png'
 import imgAI from '@/assets/preview/ai-generation.png'
 import imgSettings from '@/assets/preview/settings.png'
 
-const screenshots = [
-  { src: imgTimeline1, label: 'Timeline & options' },
-  { src: imgTimeline2, label: 'Vue 3D & timeline' },
-  { src: imgTimeline3, label: 'Charge port & events' },
-  { src: imgAI, label: 'Génération IA' },
-  { src: imgSettings, label: 'Paramètres avancés' },
-]
+const SCREENSHOT_SRCS = [imgTimeline1, imgTimeline2, imgTimeline3, imgAI, imgSettings]
 
 function PhoneMockup({
   src,
@@ -56,13 +51,16 @@ function PhoneMockup({
 
 export default function Preview() {
   const [lightbox, setLightbox] = useState<number | null>(null)
+  const { t } = useTranslation()
+  const labels = t('preview.screenshots', { returnObjects: true }) as string[]
+  const count = SCREENSHOT_SRCS.length
 
   const openLightbox = (index: number) => setLightbox(index)
   const closeLightbox = () => setLightbox(null)
   const prev = () =>
-    setLightbox((i) => (i !== null ? (i - 1 + screenshots.length) % screenshots.length : null))
+    setLightbox((i) => (i !== null ? (i - 1 + count) % count : null))
   const next = () =>
-    setLightbox((i) => (i !== null ? (i + 1) % screenshots.length : null))
+    setLightbox((i) => (i !== null ? (i + 1) % count : null))
 
   return (
     <section id="preview" className="relative py-24 lg:py-32 bg-surface overflow-hidden">
@@ -82,25 +80,24 @@ export default function Preview() {
           className="text-center mb-16 lg:mb-20"
         >
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary-light mb-4">
-            Aperçu
+            {t('preview.label')}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Conçu pour être{' '}
+            {t('preview.titleStart')}
             <span className="bg-gradient-to-r from-primary-light via-accent to-accent-light bg-clip-text text-transparent">
-              intuitif
+              {t('preview.titleHighlight')}
             </span>
           </h2>
           <p className="max-w-2xl mx-auto text-text-secondary text-base lg:text-lg leading-relaxed">
-            Une interface sombre et épurée, pensée pour la création sur mobile.
-            Touchez pour agrandir.
+            {t('preview.subtitle')}
           </p>
         </motion.div>
 
         {/* Screenshots — horizontal scroll on mobile, centered flex on desktop */}
         <div className="flex gap-6 lg:gap-8 overflow-x-auto lg:overflow-x-visible lg:flex-wrap lg:justify-center pb-6 lg:pb-0 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
-          {screenshots.map((shot, index) => (
+          {SCREENSHOT_SRCS.map((src, index) => (
             <motion.div
-              key={shot.label}
+              key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
@@ -108,8 +105,8 @@ export default function Preview() {
               className="snap-center"
             >
               <PhoneMockup
-                src={shot.src}
-                label={shot.label}
+                src={src}
+                label={labels[index]}
                 onClick={() => openLightbox(index)}
               />
             </motion.div>
@@ -132,7 +129,7 @@ export default function Preview() {
             <button
               onClick={closeLightbox}
               className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-              aria-label="Fermer"
+              aria-label={t('preview.closeAria')}
             >
               <X size={24} />
             </button>
@@ -141,7 +138,7 @@ export default function Preview() {
             <button
               onClick={(e) => { e.stopPropagation(); prev() }}
               className="absolute left-3 sm:left-6 z-10 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-              aria-label="Précédent"
+              aria-label={t('preview.prevAria')}
             >
               <ChevronLeft size={28} />
             </button>
@@ -150,7 +147,7 @@ export default function Preview() {
             <button
               onClick={(e) => { e.stopPropagation(); next() }}
               className="absolute right-3 sm:right-6 z-10 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-              aria-label="Suivant"
+              aria-label={t('preview.nextAria')}
             >
               <ChevronRight size={28} />
             </button>
@@ -169,8 +166,8 @@ export default function Preview() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-black rounded-b-2xl z-10" />
               <div className="overflow-hidden rounded-[2rem]">
                 <img
-                  src={screenshots[lightbox].src}
-                  alt={screenshots[lightbox].label}
+                  src={SCREENSHOT_SRCS[lightbox]}
+                  alt={labels[lightbox]}
                   className="w-full h-auto block"
                 />
               </div>
@@ -178,7 +175,7 @@ export default function Preview() {
 
             {/* Label */}
             <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm font-medium text-white/70">
-              {screenshots[lightbox].label} — {lightbox + 1}/{screenshots.length}
+              {labels[lightbox]} — {lightbox + 1}/{count}
             </p>
           </motion.div>
         )}

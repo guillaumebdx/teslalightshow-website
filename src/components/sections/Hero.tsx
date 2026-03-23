@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Play, X } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import ModelViewer from '@/components/three/ModelViewer'
 
 export default function Hero() {
   const [showDemo, setShowDemo] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <section className="relative min-h-screen bg-surface">
@@ -31,24 +33,22 @@ export default function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border-light bg-surface-card/50 backdrop-blur-sm px-4 py-1.5 mb-5 lg:mb-8">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
             <span className="text-xs font-medium text-text-secondary">
-              Accès anticipé
+              {t('hero.badge')}
             </span>
           </div>
 
           {/* Heading */}
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] mb-4 lg:mb-6">
-            <span className="text-text-primary">Créez des </span>
+            <span className="text-text-primary">{t('hero.titleStart')}</span>
             <span className="bg-gradient-to-r from-primary-light via-accent to-accent-light bg-clip-text text-transparent">
-              light shows
+              {t('hero.titleHighlight')}
             </span>
-            <br />
-            <span className="text-text-primary">spectaculaires</span>
+            {t('hero.titleEnd') && <><br /><span className="text-text-primary">{t('hero.titleEnd')}</span></>}
           </h1>
 
           {/* Subtitle — desktop only */}
           <p className="hidden lg:block max-w-lg text-lg text-text-secondary leading-relaxed mb-10">
-            L'outil professionnel pour concevoir, synchroniser et piloter vos
-            spectacles lumineux. Simple. Puissant. Intuitif.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA */}
@@ -58,7 +58,7 @@ export default function Hero() {
               className="group inline-flex items-center gap-2 rounded-full border border-border-light bg-surface-card/50 backdrop-blur-sm px-6 py-3 lg:px-7 lg:py-3.5 text-sm font-semibold text-text-primary hover:bg-surface-elevated transition-all duration-300"
             >
               <Play size={18} className="text-primary-light" />
-              Voir la démo
+              {t('hero.cta')}
             </button>
           </div>
         </motion.div>
@@ -112,7 +112,7 @@ export default function Hero() {
               <button
                 onClick={() => setShowDemo(false)}
                 className="absolute top-3 right-3 z-10 p-1.5 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
-                aria-label="Fermer"
+                aria-label={t('hero.closeAria')}
               >
                 <X size={20} />
               </button>
@@ -121,7 +121,7 @@ export default function Hero() {
                 className="w-full h-full"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
-                title="Démo LightShow Studio"
+                title={t('hero.videoTitle')}
               />
             </motion.div>
           </motion.div>

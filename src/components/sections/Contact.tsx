@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import { Mail } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
+  const { t } = useTranslation()
+
   return (
     <section id="contact" className="relative py-24 lg:py-32 bg-surface">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -17,16 +20,16 @@ export default function Contact() {
           className="text-center"
         >
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-primary-light mb-4">
-            Contact
+            {t('contact.label')}
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Une question ?{' '}
+            {t('contact.titleStart')}
             <span className="bg-gradient-to-r from-primary-light via-accent to-accent-light bg-clip-text text-transparent">
-              Écrivez-nous
+              {t('contact.titleHighlight')}
             </span>
           </h2>
           <p className="max-w-xl mx-auto text-text-secondary text-base lg:text-lg leading-relaxed mb-10">
-            Accès anticipé, suggestion, bug, partenariat ou simplement dire bonjour :) on vous répond rapidement.
+            {t('contact.subtitle')}
           </p>
 
           <a
