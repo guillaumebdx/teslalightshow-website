@@ -62,7 +62,9 @@ export default function Download() {
             </motion.a>
 
             <motion.a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.guillaumebdx.tesla3dviewer"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
