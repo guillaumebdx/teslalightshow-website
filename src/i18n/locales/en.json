@@ -139,6 +139,15 @@
     "appStoreAlt": "Download on the App Store — Coming Soon",
     "playStoreAlt": "Get it on Google Play — Coming Soon"
   },
+  "chat": {
+    "cta": "Got a question?",
+    "open": "Open chat",
+    "close": "Close chat",
+    "headerSub": "LightShow Studio · Support",
+    "welcome": "👋 Hi! Got a question about LightShow Studio? I usually reply within a few minutes.",
+    "placeholder": "Write your message…",
+    "send": "Send"
+  },
   "footer": {
     "aria": "Footer",
     "copyright": "© {{year}} LightShow Studio · Designed and developed by Guillaume Harari"

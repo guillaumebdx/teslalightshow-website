@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout'
 import { Hero, Features, Preview, Contact, Download } from '@/components/sections'
 import SeoHead from '@/components/SeoHead'
+import ChatWidget from '@/components/ChatWidget'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Preview />
       <Contact />
       <Download />
+      <ChatWidget />
     </Layout>
   )
 }
