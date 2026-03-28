@@ -204,7 +204,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed z-[999] bottom-0 right-0 sm:bottom-5 sm:right-5 w-full h-full sm:w-[380px] sm:h-[520px] flex flex-col rounded-none sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            className="fixed z-[999] bottom-0 right-0 sm:bottom-5 sm:right-5 w-full h-full sm:w-[380px] sm:h-[520px] max-w-full flex flex-col rounded-none sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10"
           >
             {/* --- Header --- */}
             <div className="flex items-center gap-3 px-4 py-3 bg-[#e94560] text-white shrink-0">
@@ -278,7 +278,7 @@ export default function ChatWidget() {
             </div>
 
             {/* --- Input --- */}
-            <div className="shrink-0 bg-white border-t border-gray-200 px-3 py-2.5 flex items-end gap-2">
+            <div className="shrink-0 bg-white border-t border-gray-200 px-3 py-2.5 flex items-end gap-2 overflow-hidden">
               <textarea
                 ref={inputRef}
                 value={input}
@@ -287,7 +287,7 @@ export default function ChatWidget() {
                 placeholder={t('chat.placeholder')}
                 maxLength={2000}
                 rows={1}
-                className="flex-1 resize-none rounded-xl bg-gray-100 px-3.5 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#e94560]/30 max-h-[100px] overflow-y-auto"
+                className="flex-1 min-w-0 resize-none rounded-xl bg-gray-100 px-3.5 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#e94560]/30 max-h-[100px] overflow-y-auto"
                 style={{ minHeight: '40px' }}
               />
               <button
