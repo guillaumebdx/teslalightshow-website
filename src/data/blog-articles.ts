@@ -5,10 +5,12 @@ import glovebox from '@/assets/blog/boite-a-gant.jpg'
 import exportScreen from '@/assets/blog/export.png'
 
 // --------------- Types ---------------
+type ImageSrc = string | { src: string; height?: number; width?: number }
+
 export type BlockType =
   | { type: 'paragraph'; text: string }
   | { type: 'heading'; text: string }
-  | { type: 'image'; src: string; alt: string; caption?: string }
+  | { type: 'image'; src: ImageSrc; alt: string; caption?: string }
   | { type: 'cta'; text: string; href: string }
   | { type: 'list'; items: string[] }
 
@@ -21,8 +23,13 @@ export interface ArticleTranslation {
 export interface BlogArticle {
   slug: string
   date: string
-  thumbnail: string
+  thumbnail: ImageSrc
   translations: Record<string, ArticleTranslation>
+}
+
+/** Resolve an ImageSrc to a plain string URL */
+export function resolveImg(img: ImageSrc): string {
+  return typeof img === 'string' ? img : img.src
 }
 
 // --------------- Articles ---------------

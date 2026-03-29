@@ -1,8 +1,12 @@
+'use client'
+
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle, X, Send } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import guillaumeImg from '@/assets/guillaume.jpg'
+import guillaumeImgData from '@/assets/guillaume.jpg'
+
+const guillaumeImg = typeof guillaumeImgData === 'string' ? guillaumeImgData : guillaumeImgData.src
 
 const API = 'https://lightstudio.harari.ovh'
 

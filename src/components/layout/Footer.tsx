@@ -1,5 +1,7 @@
+'use client'
+
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Facebook } from 'lucide-react'
 import { useLocale } from '@/hooks/useLocale'
 import logo from '@/assets/logo_transparent.png'
@@ -14,7 +16,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src={logo} alt="LightShow Studio" className="h-7 w-auto" />
+            <img src={logo.src ?? logo} alt="LightShow Studio" className="h-7 w-auto" />
             <span className="font-display text-base font-semibold text-text-primary tracking-tight">
               LightShow Studio
             </span>
@@ -25,7 +27,7 @@ export default function Footer() {
             <a href={localePath('/#features')} className="hover:text-text-primary transition-colors">{t('nav.features')}</a>
             <a href={localePath('/#preview')} className="hover:text-text-primary transition-colors">{t('nav.preview')}</a>
             <a href={localePath('/#contact')} className="hover:text-text-primary transition-colors">{t('nav.contact')}</a>
-            <Link to={localePath('/blog')} className="hover:text-text-primary transition-colors">{t('nav.blog')}</Link>
+            <Link href={localePath('/blog')} className="hover:text-text-primary transition-colors">{t('nav.blog')}</Link>
           </div>
 
           {/* Social + Copyright */}

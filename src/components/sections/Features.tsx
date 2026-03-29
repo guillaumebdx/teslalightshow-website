@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Car, Music, Sparkles, Bot, FolderOpen, Share2 } from 'lucide-react'

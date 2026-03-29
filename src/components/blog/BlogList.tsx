@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { ArrowRight } from 'lucide-react'
-import { articles, getArticleTranslation } from '@/data/blog-articles'
+import { articles, getArticleTranslation, resolveImg } from '@/data/blog-articles'
 import { useLocale } from '@/hooks/useLocale'
 
 export default function BlogList() {
@@ -39,13 +41,13 @@ export default function BlogList() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
                 <Link
-                  to={localePath(`/blog/${article.slug}`)}
+                  href={localePath(`/blog/${article.slug}`)}
                   className="group flex flex-col sm:flex-row gap-5 rounded-2xl border border-border-light bg-surface-card/50 backdrop-blur-sm p-4 sm:p-5 hover:border-border-light/50 hover:bg-surface-card/80 transition-all duration-300"
                 >
                   {/* Thumbnail */}
                   <div className="sm:w-56 shrink-0 overflow-hidden rounded-xl">
                     <img
-                      src={article.thumbnail}
+                      src={resolveImg(article.thumbnail)}
                       alt={tr.title}
                       className="w-full h-40 sm:h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                     />

@@ -1,8 +1,13 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
-import appStoreBadge from '@/assets/preview/appstore.png'
-import playStoreBadge from '@/assets/preview/playstore.png'
+import appStoreBadgeImg from '@/assets/preview/appstore.png'
+import playStoreBadgeImg from '@/assets/preview/playstore.png'
+
+const appStoreBadge = typeof appStoreBadgeImg === 'string' ? appStoreBadgeImg : appStoreBadgeImg.src
+const playStoreBadge = typeof playStoreBadgeImg === 'string' ? playStoreBadgeImg : playStoreBadgeImg.src
 
 const APP_STORE_URLS: Record<string, string> = {
   fr: 'https://apps.apple.com/fr/app/lightshow-studio/id6759118132',

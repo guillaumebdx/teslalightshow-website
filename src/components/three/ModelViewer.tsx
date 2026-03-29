@@ -1,8 +1,10 @@
+'use client'
+
 import { Suspense, useRef, useEffect, useMemo, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, OrbitControls } from '@react-three/drei'
 import { Box3, Vector3, ACESFilmicToneMapping, type Group } from 'three'
-import modelPath from '@/assets/tesla_20260303_geo.glb?url'
+const modelPath = '/tesla_20260303_geo.glb'
 import { LightShowController } from './lightshow'
 
 function Model({ desiredSize }: { desiredSize: number }) {

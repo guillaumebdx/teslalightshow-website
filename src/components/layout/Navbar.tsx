@@ -1,8 +1,11 @@
+'use client'
+
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Globe } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Link, useNavigate } from 'react-router-dom'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useLocale, SUPPORTED_LANGS } from '@/hooks/useLocale'
 import logo from '@/assets/logo_transparent.png'
 
@@ -15,7 +18,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
   const { t } = useTranslation()
-  const navigate = useNavigate()
+  const router = useRouter()
   const { lang, localePath, switchLangPath, isHome } = useLocale()
 
   const navLinks = [
@@ -31,7 +34,7 @@ export default function Navbar() {
 
   const switchLang = (code: string) => {
     setLangOpen(false)
-    navigate(switchLangPath(code))
+    router.push(switchLangPath(code))
   }
 
   const currentLang = lang.toUpperCase()
@@ -41,8 +44,8 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to={localePath('/')} className="flex items-center gap-2 group">
-            <img src={logo} alt="LightShow Studio" className="h-8 w-auto" />
+          <Link href={localePath('/')} className="flex items-center gap-2 group">
+            <img src={logo.src ?? logo} alt="LightShow Studio" className="h-8 w-auto" />
             <span className="font-display text-lg font-semibold text-text-primary tracking-tight">
               LightShow Studio
             </span>
@@ -54,7 +57,7 @@ export default function Navbar() {
               link.href.startsWith('/') ? (
                 <Link
                   key={link.href}
-                  to={link.href}
+                  href={link.href}
                   className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
                 >
                   {link.label}
@@ -177,7 +180,7 @@ export default function Navbar() {
                 link.href.startsWith('/') ? (
                   <Link
                     key={link.href}
-                    to={link.href}
+                    href={link.href}
                     onClick={() => setIsOpen(false)}
                     className="block text-base text-text-secondary hover:text-text-primary transition-colors py-2"
                   >

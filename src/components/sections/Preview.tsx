@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -9,7 +11,11 @@ import imgTimeline3 from '@/assets/preview/timeline3.png'
 import imgAI from '@/assets/preview/ai-generation.png'
 import imgSettings from '@/assets/preview/settings.png'
 
-const SCREENSHOT_SRCS = [imgTimeline1, imgTimeline2, imgTimeline3, imgAI, imgSettings]
+function resolveSrc(img: string | { src: string }): string {
+  return typeof img === 'string' ? img : img.src
+}
+
+const SCREENSHOT_SRCS = [imgTimeline1, imgTimeline2, imgTimeline3, imgAI, imgSettings].map(resolveSrc)
 
 function PhoneMockup({
   src,
@@ -20,6 +26,7 @@ function PhoneMockup({
   label: string
   onClick: () => void
 }) {
+  // src is already resolved to string
   return (
     <button
       onClick={onClick}

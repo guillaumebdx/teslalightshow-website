@@ -1,8 +1,11 @@
-import { useParams, Link, Navigate } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { ArrowLeft } from 'lucide-react'
-import { getArticle, getArticleTranslation, type BlockType } from '@/data/blog-articles'
+import { getArticle, getArticleTranslation, resolveImg, type BlockType } from '@/data/blog-articles'
 import { useEffect } from 'react'
 import { useLocale } from '@/hooks/useLocale'
 
@@ -24,7 +27,7 @@ function ContentBlock({ block, localePath }: { block: BlockType; localePath: (p:
       return (
         <figure className="my-2">
           <img
-            src={block.src}
+            src={resolveImg(block.src)}
             alt={block.alt}
             className="w-full rounded-xl border border-border-light shadow-lg"
             loading="lazy"
@@ -40,7 +43,7 @@ function ContentBlock({ block, localePath }: { block: BlockType; localePath: (p:
       return (
         <div className="my-2">
           <Link
-            to={localePath(block.href)}
+            href={localePath(block.href)}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-light transition-colors duration-200"
           >
             {block.text}
@@ -72,15 +75,10 @@ export default function BlogArticlePage() {
   const tr = article ? getArticleTranslation(article, i18n.language) : undefined
 
   useEffect(() => {
-    if (tr) {
-      document.title = `${tr.title} — LightShow Studio`
-      const meta = document.querySelector('meta[name="description"]')
-      if (meta) meta.setAttribute('content', tr.description)
-    }
     window.scrollTo(0, 0)
-  }, [tr])
+  }, [slug])
 
-  if (!article || !tr) return <Navigate to={localePath('/blog')} replace />
+  if (!article || !tr) return null
 
   return (
     <article className="min-h-screen bg-surface pt-28 pb-24 lg:pt-36 lg:pb-32">
@@ -93,7 +91,7 @@ export default function BlogArticlePage() {
           className="mb-8"
         >
           <Link
-            to={localePath('/blog')}
+            href={localePath('/blog')}
             className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text-primary transition-colors"
           >
             <ArrowLeft size={16} />
