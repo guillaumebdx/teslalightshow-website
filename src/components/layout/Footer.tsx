@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { Facebook } from 'lucide-react'
 import { useLocale } from '@/hooks/useLocale'
 import logo from '@/assets/logo_transparent.png'
 
@@ -27,10 +28,21 @@ export default function Footer() {
             <Link to={localePath('/blog')} className="hover:text-text-primary transition-colors">{t('nav.blog')}</Link>
           </div>
 
-          {/* Copyright */}
-          <p className="text-sm text-text-muted">
-            {t('footer.copyright', { year: new Date().getFullYear() })}
-          </p>
+          {/* Social + Copyright */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.facebook.com/lightshowstudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-text-muted hover:text-primary-light transition-colors"
+            >
+              <Facebook size={18} />
+            </a>
+            <p className="text-sm text-text-muted">
+              {t('footer.copyright', { year: new Date().getFullYear() })}
+            </p>
+          </div>
         </div>
       </div>
     </footer>
