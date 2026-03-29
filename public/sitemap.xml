@@ -1,33 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage: x-default redirect -->
   <url>
     <loc>https://lightshowstud.io/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightshowstud.io/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es" />
+  </url>
+
+  <!-- FR -->
+  <url>
+    <loc>https://lightshowstud.io/fr</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightshowstud.io/" />
   </url>
   <url>
-    <loc>https://lightshowstud.io/blog</loc>
+    <loc>https://lightshowstud.io/fr/blog</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog" />
   </url>
   <url>
-    <loc>https://lightshowstud.io/blog/tesla-light-show-communities-download-ready-made-shows</loc>
+    <loc>https://lightshowstud.io/fr/blog/tesla-light-show-communities-download-ready-made-shows</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/tesla-light-show-communities-download-ready-made-shows" />
   </url>
   <url>
-    <loc>https://lightshowstud.io/blog/xlights-create-tesla-light-shows-on-pc</loc>
+    <loc>https://lightshowstud.io/fr/blog/xlights-create-tesla-light-shows-on-pc</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/xlights-create-tesla-light-shows-on-pc" />
   </url>
   <url>
-    <loc>https://lightshowstud.io/blog/how-to-install-tesla-light-show-usb</loc>
+    <loc>https://lightshowstud.io/fr/blog/how-to-install-tesla-light-show-usb</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/how-to-install-tesla-light-show-usb" />
   </url>
+
+  <!-- EN -->
+  <url>
+    <loc>https://lightshowstud.io/en</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightshowstud.io/" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/en/blog</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/en/blog/tesla-light-show-communities-download-ready-made-shows</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/tesla-light-show-communities-download-ready-made-shows" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/en/blog/xlights-create-tesla-light-shows-on-pc</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/xlights-create-tesla-light-shows-on-pc" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/en/blog/how-to-install-tesla-light-show-usb</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/how-to-install-tesla-light-show-usb" />
+  </url>
+
+  <!-- DE -->
+  <url>
+    <loc>https://lightshowstud.io/de</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightshowstud.io/" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/de/blog</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/de/blog/tesla-light-show-communities-download-ready-made-shows</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/tesla-light-show-communities-download-ready-made-shows" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/de/blog/xlights-create-tesla-light-shows-on-pc</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/xlights-create-tesla-light-shows-on-pc" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/de/blog/how-to-install-tesla-light-show-usb</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/how-to-install-tesla-light-show-usb" />
+  </url>
+
+  <!-- ES -->
+  <url>
+    <loc>https://lightshowstud.io/es</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightshowstud.io/" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/es/blog</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/es/blog/tesla-light-show-communities-download-ready-made-shows</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/tesla-light-show-communities-download-ready-made-shows" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/tesla-light-show-communities-download-ready-made-shows" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/es/blog/xlights-create-tesla-light-shows-on-pc</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/xlights-create-tesla-light-shows-on-pc" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/xlights-create-tesla-light-shows-on-pc" />
+  </url>
+  <url>
+    <loc>https://lightshowstud.io/es/blog/how-to-install-tesla-light-show-usb</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightshowstud.io/fr/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightshowstud.io/en/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://lightshowstud.io/de/blog/how-to-install-tesla-light-show-usb" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://lightshowstud.io/es/blog/how-to-install-tesla-light-show-usb" />
+  </url>
+
 </urlset>

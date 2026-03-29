@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { ArrowLeft } from 'lucide-react'
 import { getArticle, getArticleTranslation, type BlockType } from '@/data/blog-articles'
 import { useEffect } from 'react'
+import { useLocale } from '@/hooks/useLocale'
 
-function ContentBlock({ block }: { block: BlockType }) {
+function ContentBlock({ block, localePath }: { block: BlockType; localePath: (p: string) => string }) {
   switch (block.type) {
     case 'paragraph':
       return (
@@ -39,7 +40,7 @@ function ContentBlock({ block }: { block: BlockType }) {
       return (
         <div className="my-2">
           <Link
-            to={block.href}
+            to={localePath(block.href)}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-light transition-colors duration-200"
           >
             {block.text}
@@ -65,6 +66,7 @@ function ContentBlock({ block }: { block: BlockType }) {
 export default function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>()
   const { t, i18n } = useTranslation()
+  const { localePath } = useLocale()
 
   const article = slug ? getArticle(slug) : undefined
   const tr = article ? getArticleTranslation(article, i18n.language) : undefined
@@ -78,7 +80,7 @@ export default function BlogArticlePage() {
     window.scrollTo(0, 0)
   }, [tr])
 
-  if (!article || !tr) return <Navigate to="/blog" replace />
+  if (!article || !tr) return <Navigate to={localePath('/blog')} replace />
 
   return (
     <article className="min-h-screen bg-surface pt-28 pb-24 lg:pt-36 lg:pb-32">
@@ -91,7 +93,7 @@ export default function BlogArticlePage() {
           className="mb-8"
         >
           <Link
-            to="/blog"
+            to={localePath('/blog')}
             className="inline-flex items-center gap-1.5 text-sm text-text-muted hover:text-text-primary transition-colors"
           >
             <ArrowLeft size={16} />
@@ -126,7 +128,7 @@ export default function BlogArticlePage() {
           className="space-y-6"
         >
           {tr.content.map((block, i) => (
-            <ContentBlock key={i} block={block} />
+            <ContentBlock key={i} block={block} localePath={localePath} />
           ))}
         </motion.div>
       </div>

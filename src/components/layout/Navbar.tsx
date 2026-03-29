@@ -2,23 +2,21 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Globe } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useLocale, SUPPORTED_LANGS } from '@/hooks/useLocale'
 import logo from '@/assets/logo_transparent.png'
 
-const LANGS = [
-  { code: 'fr', label: 'FR' },
-  { code: 'en', label: 'EN' },
-  { code: 'de', label: 'DE' },
-  { code: 'es', label: 'ES' },
-] as const
+const LANGS = SUPPORTED_LANGS.map((code) => ({
+  code,
+  label: code.toUpperCase(),
+}))
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
-  const { t, i18n } = useTranslation()
-
-  const location = useLocation()
-  const isHome = location.pathname === '/'
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { lang, localePath, switchLangPath, isHome } = useLocale()
 
   const navLinks = [
     ...(isHome
@@ -28,23 +26,22 @@ export default function Navbar() {
           { label: t('nav.contact'), href: '#contact' },
         ]
       : []),
-    { label: t('nav.blog'), href: '/blog' },
+    { label: t('nav.blog'), href: localePath('/blog') },
   ]
 
   const switchLang = (code: string) => {
-    i18n.changeLanguage(code)
-    document.documentElement.lang = code
     setLangOpen(false)
+    navigate(switchLangPath(code))
   }
 
-  const currentLang = LANGS.find((l) => i18n.language.startsWith(l.code))?.label ?? 'FR'
+  const currentLang = lang.toUpperCase()
 
   return (
     <nav aria-label={t('nav.aria')} className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-surface/60 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to={localePath('/')} className="flex items-center gap-2 group">
             <img src={logo} alt="LightShow Studio" className="h-8 w-auto" />
             <span className="font-display text-lg font-semibold text-text-primary tracking-tight">
               LightShow Studio
@@ -92,17 +89,17 @@ export default function Navbar() {
                     transition={{ duration: 0.15 }}
                     className="absolute right-0 mt-2 w-20 rounded-xl border border-border bg-surface-card/95 backdrop-blur-xl shadow-xl overflow-hidden"
                   >
-                    {LANGS.map((lang) => (
+                    {LANGS.map((l) => (
                       <button
-                        key={lang.code}
-                        onClick={() => switchLang(lang.code)}
+                        key={l.code}
+                        onClick={() => switchLang(l.code)}
                         className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
-                          i18n.language.startsWith(lang.code)
+                          l.code === lang
                             ? 'text-primary-light bg-primary/10'
                             : 'text-text-secondary hover:text-text-primary hover:bg-surface-elevated'
                         }`}
                       >
-                        {lang.label}
+                        {l.label}
                       </button>
                     ))}
                   </motion.div>
@@ -111,7 +108,7 @@ export default function Navbar() {
             </div>
 
             <a
-              href={isHome ? '#download' : '/#download'}
+              href={isHome ? '#download' : localePath('/#download')}
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-light transition-colors duration-200"
             >
               {t('nav.download')}
@@ -137,17 +134,17 @@ export default function Navbar() {
                     transition={{ duration: 0.15 }}
                     className="absolute right-0 mt-2 w-20 rounded-xl border border-border bg-surface-card/95 backdrop-blur-xl shadow-xl overflow-hidden z-[60]"
                   >
-                    {LANGS.map((lang) => (
+                    {LANGS.map((l) => (
                       <button
-                        key={lang.code}
-                        onClick={() => switchLang(lang.code)}
+                        key={l.code}
+                        onClick={() => switchLang(l.code)}
                         className={`block w-full px-4 py-2 text-sm text-left transition-colors ${
-                          i18n.language.startsWith(lang.code)
+                          l.code === lang
                             ? 'text-primary-light bg-primary/10'
                             : 'text-text-secondary hover:text-text-primary hover:bg-surface-elevated'
                         }`}
                       >
-                        {lang.label}
+                        {l.label}
                       </button>
                     ))}
                   </motion.div>
@@ -198,7 +195,7 @@ export default function Navbar() {
                 ),
               )}
               <a
-                href={isHome ? '#download' : '/#download'}
+                href={isHome ? '#download' : localePath('/#download')}
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-white hover:bg-primary-light transition-colors mt-2"
               >

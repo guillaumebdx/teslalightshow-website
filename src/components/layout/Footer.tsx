@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { useLocale } from '@/hooks/useLocale'
 import logo from '@/assets/logo_transparent.png'
 
 export default function Footer() {
   const { t } = useTranslation()
+  const { localePath } = useLocale()
 
   return (
     <footer aria-label={t('footer.aria')} className="border-t border-border bg-surface-light">
@@ -19,10 +21,10 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex items-center gap-6 text-sm text-text-muted">
-            <a href="/#features" className="hover:text-text-primary transition-colors">{t('nav.features')}</a>
-            <a href="/#preview" className="hover:text-text-primary transition-colors">{t('nav.preview')}</a>
-            <a href="/#contact" className="hover:text-text-primary transition-colors">{t('nav.contact')}</a>
-            <Link to="/blog" className="hover:text-text-primary transition-colors">{t('nav.blog')}</Link>
+            <a href={localePath('/#features')} className="hover:text-text-primary transition-colors">{t('nav.features')}</a>
+            <a href={localePath('/#preview')} className="hover:text-text-primary transition-colors">{t('nav.preview')}</a>
+            <a href={localePath('/#contact')} className="hover:text-text-primary transition-colors">{t('nav.contact')}</a>
+            <Link to={localePath('/blog')} className="hover:text-text-primary transition-colors">{t('nav.blog')}</Link>
           </div>
 
           {/* Copyright */}
