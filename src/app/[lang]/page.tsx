@@ -36,16 +36,62 @@ export async function generateMetadata({
       url: `${BASE}/${locale}`,
       locale: ogLocale,
       type: 'website',
+      images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
+      card: 'summary_large_image',
       title: t(dict, 'meta.twitterTitle'),
       description: t(dict, 'meta.twitterDescription'),
+      images: [`${BASE}/og-image.png`],
     },
   }
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
-  void lang
-  return <HomePage />
+  const locale = isLang(lang) ? lang : 'fr'
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'LightShow Studio',
+      url: BASE,
+      inLanguage: ['fr', 'en', 'de', 'es'],
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${BASE}/{search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'LightShow Studio',
+      url: BASE,
+      logo: `${BASE}/favicon.png`,
+      sameAs: ['https://www.facebook.com/lightshowstudio'],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: 'LightShow Studio',
+      operatingSystem: 'iOS, Android',
+      applicationCategory: 'EntertainmentApplication',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+      url: `${BASE}/${locale}`,
+      description:
+        'Create stunning Tesla light shows with millisecond precision. Interactive 3D model, audio timeline, AI generation and native .fseq export.',
+    },
+  ]
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomePage />
+    </>
+  )
 }

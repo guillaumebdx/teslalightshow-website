@@ -15,5 +15,9 @@ export default function RootPage() {
     router.replace(`/${lang}`)
   }, [router])
 
-  return null
+  return (
+    <html lang="fr">
+      <body />
+    </html>
+  )
 }

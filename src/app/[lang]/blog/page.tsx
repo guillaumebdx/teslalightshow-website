@@ -34,8 +34,14 @@ export async function generateMetadata({
       description,
       url: `${BASE}/${locale}/blog`,
       type: 'website',
+      images: [{ url: `${BASE}/og-image.png`, width: 1200, height: 630 }],
     },
-    twitter: { title, description },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${BASE}/og-image.png`],
+    },
   }
 }
 
