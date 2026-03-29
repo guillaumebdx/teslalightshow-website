@@ -3,3 +3,4 @@ Allow: /
 Disallow:
 
 Sitemap: https://lightshowstud.io/sitemap.xml
+Llms: https://lightshowstud.io/llms.txt

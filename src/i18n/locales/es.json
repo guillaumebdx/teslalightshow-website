@@ -1,32 +1,55 @@
 {
   "meta": {
-    "title": "LightShow Studio — Crea Light Shows Tesla espectaculares",
-    "description": "Crea, sincroniza y exporta light shows Tesla directamente desde tu iPhone. Modelo 3D interactivo, timeline de audio, generación IA y exportación .fseq nativa. Compatible con Model 3 y Model Y.",
-    "ogDescription": "La app iOS para crear light shows Tesla con un modelo 3D interactivo, timeline de audio y generación IA. Exportación .fseq nativa, compatible con Model 3/Y.",
-    "twitterTitle": "LightShow Studio — Light Shows Tesla desde tu iPhone",
-    "twitterDescription": "Modelo 3D, timeline de audio, IA generativa y exportación .fseq. Crea el espectáculo de luces perfecto para tu Tesla."
+    "title": "LightShow Studio — Crea Tesla Light Shows",
+    "description": "Crea Tesla light shows impresionantes con precisión al milisegundo. Modelo 3D, timeline de audio, generación IA y exportación .fseq nativa. App gratuita, Model 3/Y.",
+    "ogDescription": "Crea Tesla light shows con modelo 3D interactivo, timeline de audio, generación IA y exportación .fseq. Gratis para Model 3 & Y.",
+    "twitterTitle": "LightShow Studio — App para crear Tesla Light Shows",
+    "twitterDescription": "Crea Tesla light shows con modelo 3D, timeline de audio, IA y exportación .fseq. Precisión al milisegundo, app gratuita."
   },
   "nav": {
     "features": "Características",
     "preview": "Vista previa",
     "contact": "Contacto",
     "download": "Descargar",
+    "blog": "Blog",
     "aria": "Navegación principal"
   },
   "hero": {
     "badge": "Acceso anticipado",
-    "titleStart": "Crea ",
-    "titleHighlight": "light shows",
-    "titleEnd": "espectaculares",
+    "titleStart": "Crea tu ",
+    "titleHighlight": "Tesla Light Show",
+    "titleEnd": "",
     "subtitle": "La herramienta profesional para diseñar, sincronizar y controlar tus espectáculos de luces. Simple. Potente. Intuitivo.",
     "cta": "Ver la demo",
     "closeAria": "Cerrar",
     "videoTitle": "Demo de LightShow Studio"
   },
+  "howItWorks": {
+    "label": "Cómo funciona",
+    "title": "Cómo crear un Tesla Light Show",
+    "blocks": [
+      {
+        "heading": "¿Qué es un Tesla Light Show?",
+        "text": "Un Tesla light show es una secuencia coreografiada de luces, ventanas, espejos, maletero y puerto de carga sincronizada con música. Los vehículos Tesla soportan nativamente archivos .fseq cargados desde una memoria USB. LightShow Studio es la app que te permite crear Tesla light shows desde cero — sin programación, sin herramientas complejas, solo un editor visual diseñado para todos."
+      },
+      {
+        "heading": "¿Para quién es?",
+        "text": "Ya seas propietario de un Tesla que quiere impresionar en un encuentro de coches, una mente creativa que ama sincronizar luces con música, o simplemente curioso sobre lo que tu Model 3 o Model Y puede hacer — LightShow Studio es para ti. No se requiere experiencia técnica. La app te guía paso a paso, desde elegir una canción hasta exportar un archivo .fseq listo para reproducir."
+      },
+      {
+        "heading": "Precisión al milisegundo, o deja que la IA te ayude",
+        "text": "Lo que hace único a LightShow Studio es el nivel de control que ofrece. Coloca cada evento de luz en una timeline sincronizada con el audio con precisión al milisegundo — faros, intermitentes, antiniebla, luces de freno, ventanas, espejos, maletero y puerto de carga. Cada uno de los 21 elementos controlables puede animarse individualmente con efectos como solid, blink, fade in/out y modos especiales como window dance o LED arcoíris del puerto de carga. Pero no tienes que hacerlo todo a mano. La IA integrada analiza tu música y genera un Tesla light show completo y perfectamente sincronizado en segundos. Describe el ambiente que quieres — o elige un preset como Fuegos artificiales, Fiesta, Spooky o Romántico — y la IA se encarga del resto. Luego puedes ajustar cada detalle o simplemente exportar y disfrutar."
+      },
+      {
+        "heading": "De tu teléfono a tu Tesla",
+        "text": "Una vez que tu light show esté listo, expórtalo como archivo .fseq — el formato nativo que los vehículos Tesla entienden. La app incluye un tutorial de exportación paso a paso: transfiere el archivo a una memoria USB, conéctala a tu Tesla y pulsa play. Tu Tesla light show personalizado cobra vida. Comparte tus creaciones con la comunidad o importa shows de otros usuarios. LightShow Studio está disponible gratis en iOS y Android."
+      }
+    ]
+  },
   "features": {
     "label": "Características",
-    "titleStart": "Todo lo que necesitas para crear ",
-    "titleHighlight": "el show perfecto",
+    "titleStart": "La app definitiva para Tesla Light Shows — ",
+    "titleHighlight": "todas las funciones",
     "subtitle": "Desde el modelado 3D hasta la exportación Tesla, incluyendo la generación IA: cada detalle ha sido pensado para una experiencia fluida e intuitiva.",
     "showMore": "Saber más",
     "showLess": "Ocultar detalles",
@@ -138,6 +161,12 @@
     "subtitle": "Descarga LightShow Studio gratis y empieza a crear espectáculos de luces para tu Tesla.",
     "appStoreAlt": "Descargar en el App Store — Próximamente",
     "playStoreAlt": "Disponible en Google Play — Próximamente"
+  },
+  "blog": {
+    "title": "Blog — Tesla Light Show",
+    "subtitle": "Guías, consejos y noticias sobre Tesla light shows.",
+    "readMore": "Leer artículo",
+    "backToList": "Volver al blog"
   },
   "chat": {
     "cta": "¿Una pregunta?",

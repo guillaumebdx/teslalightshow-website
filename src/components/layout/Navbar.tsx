@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Globe } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '@/assets/logo_transparent.png'
 
 const LANGS = [
@@ -16,10 +17,18 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false)
   const { t, i18n } = useTranslation()
 
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
   const navLinks = [
-    { label: t('nav.features'), href: '#features' },
-    { label: t('nav.preview'), href: '#preview' },
-    { label: t('nav.contact'), href: '#contact' },
+    ...(isHome
+      ? [
+          { label: t('nav.features'), href: '#features' },
+          { label: t('nav.preview'), href: '#preview' },
+          { label: t('nav.contact'), href: '#contact' },
+        ]
+      : []),
+    { label: t('nav.blog'), href: '/blog' },
   ]
 
   const switchLang = (code: string) => {
@@ -35,24 +44,34 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <img src={logo} alt="LightShow Studio" className="h-8 w-auto" />
             <span className="font-display text-lg font-semibold text-text-primary tracking-tight">
               LightShow Studio
             </span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith('/') ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              ),
+            )}
 
             {/* Language switcher */}
             <div className="relative">
@@ -92,7 +111,7 @@ export default function Navbar() {
             </div>
 
             <a
-              href="#download"
+              href={isHome ? '#download' : '/#download'}
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary-light transition-colors duration-200"
             >
               {t('nav.download')}
@@ -157,18 +176,29 @@ export default function Navbar() {
             className="md:hidden overflow-hidden border-t border-border bg-surface/95 backdrop-blur-xl"
           >
             <div className="px-4 py-4 space-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-base text-text-secondary hover:text-text-primary transition-colors py-2"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.href.startsWith('/') ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-base text-text-secondary hover:text-text-primary transition-colors py-2"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-base text-text-secondary hover:text-text-primary transition-colors py-2"
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
               <a
-                href="#download"
+                href={isHome ? '#download' : '/#download'}
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center rounded-full bg-primary px-5 py-3 text-sm font-medium text-white hover:bg-primary-light transition-colors mt-2"
               >

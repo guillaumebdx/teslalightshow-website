@@ -1,0 +1,37 @@
+# LightShow Studio
+
+> The app to create Tesla light shows. Available on iOS and Android.
+
+## What is LightShow Studio?
+
+LightShow Studio is a mobile application that lets anyone create custom Tesla light shows — choreographed sequences of lights, windows, mirrors, trunk and charge port movements synchronized to music. The app exports native .fseq files that Tesla vehicles can play directly from a USB drive.
+
+## Key Features
+
+- **Interactive 3D Model**: Control 21 individual elements (headlights, turn signals, fog lights, brake lights, windows, mirrors, trunk, charge port) on a faithful 3D representation of a Tesla Model 3/Y.
+- **Audio Timeline**: Import your own MP3 or choose from a built-in music library. Place light events on a waveform-synced timeline with millisecond precision.
+- **Effects & Options**: Solid, blink (3 speeds), adjustable intensity 0-100%, fade in/out, window dance, mirror fold, trunk open/close/dance, charge port rainbow LED.
+- **AI Generation**: The built-in AI analyzes your music and generates a complete, synchronized light show in seconds. Use a custom prompt or presets (Fireworks, Party, Spooky, Romantic, Aggressive, Wave).
+- **Project Management**: Auto-save every 1.5s, duplicate/rename/delete projects, undo/redo up to 50 levels.
+- **Export & Share**: Native .fseq Tesla export, step-by-step transfer tutorial, community sharing via JSON format, MP3 audio export.
+
+## Technical Details
+
+- **Supported vehicles**: Tesla Model 3, Tesla Model Y,Model S, X and Cybertruck
+- **Export format**: .fseq (native Tesla light show format)
+- **Max music duration**: 5 minutes
+- **Controllable elements**: 21
+- **Languages**: French, English, German, Spanish
+- **Platforms**: iOS (App Store), Android (Google Play)
+- **Price**: Free
+
+## Links
+
+- Website: https://lightshowstud.io
+- App Store: https://apps.apple.com/app/lightshow-studio/id6759118132
+- Google Play: https://play.google.com/store/apps/details?id=com.guillaumebdx.tesla3dviewer
+- Contact: contact@lightshowstud.io
+
+## Developer
+
+Created by Guillaume Harari.
