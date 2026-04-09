@@ -154,6 +154,9 @@
     "titleHighlight": "Escríbenos",
     "subtitle": "Acceso anticipado, sugerencia, bug, colaboración o simplemente saludar :) respondemos rápidamente."
   },
+  "downloadCta": {
+    "text": "Disponible gratis en iOS y Android"
+  },
   "download": {
     "label": "Descarga",
     "titleStart": "¿Listo para crear ",

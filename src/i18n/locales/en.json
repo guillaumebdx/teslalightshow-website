@@ -154,6 +154,9 @@
     "titleHighlight": "Write to us",
     "subtitle": "Early access, suggestion, bug, partnership or just saying hello :) we reply quickly."
   },
+  "downloadCta": {
+    "text": "Available for free on iOS and Android"
+  },
   "download": {
     "label": "Download",
     "titleStart": "Ready to create ",

@@ -13,6 +13,7 @@ export type BlockType =
   | { type: 'image'; src: ImageSrc; alt: string; caption?: string }
   | { type: 'cta'; text: string; href: string }
   | { type: 'list'; items: string[] }
+  | { type: 'video'; videoId: string; title: string }
 
 export interface ArticleTranslation {
   title: string
@@ -929,6 +930,685 @@ export const articles: BlogArticle[] = [
           {
             type: 'cta',
             text: 'Crea y exporta tu Tesla Light Show \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: 'top-10-best-tesla-light-shows',
+    date: '2026-04-09',
+    thumbnail: 'https://img.youtube.com/vi/Opu6wukjSE4/hqdefault.jpg',
+    translations: {
+      en: {
+        title: 'Top 10 Best Tesla Light Shows — The Most Impressive Creations',
+        description:
+          'We watched hundreds of Tesla light shows so you don\'t have to. Here are the 10 best Tesla light shows ever made — with embedded videos. Get inspired and create your own.',
+        content: [
+          {
+            type: 'paragraph',
+            text: "Tesla light shows have come a long way since the feature first rolled out. What started as a fun Easter egg has turned into a genuine art form, with creators pushing the limits of what 21 controllable elements can do when perfectly synced to music. I've spent way too many hours watching Tesla light show compilations on YouTube so you don't have to — and here are the 10 best ones I found.",
+          },
+          {
+            type: 'paragraph',
+            text: "Whether you're looking for pure technical precision, creative choreography, or just something that'll make your jaw drop, this list has it all. And if any of these inspire you to create your own — that's kind of the point.",
+          },
+          {
+            type: 'heading',
+            text: '#1 — The one that sets the bar',
+          },
+          {
+            type: 'paragraph',
+            text: "Starting strong with a show that pretty much defines what a great Tesla light show looks like. The timing is razor-sharp, the music choice is perfect, and every transition feels intentional. This is the kind of show that makes you want to create your own immediately.",
+          },
+          {
+            type: 'video',
+            videoId: 'Opu6wukjSE4',
+            title: 'Best Tesla Light Show #1',
+          },
+          {
+            type: 'heading',
+            text: '#2 — Pure synchronization mastery',
+          },
+          {
+            type: 'paragraph',
+            text: "This one is all about precision. Every beat, every drop, every subtle change in the music is reflected in the lights. The creator clearly spent hours fine-tuning each event to land exactly on time. The result is mesmerizing.",
+          },
+          {
+            type: 'video',
+            videoId: 'zTJ9WSJ8HF8',
+            title: 'Best Tesla Light Show #2',
+          },
+          {
+            type: 'heading',
+            text: '#3 — Creative use of every element',
+          },
+          {
+            type: 'paragraph',
+            text: "What I love about this show is how it uses the full range of Tesla's controllable elements. Windows, mirrors, trunk, charge port — nothing is left out. It's not just headlights blinking to the beat. The window dance sequences are especially well done.",
+          },
+          {
+            type: 'video',
+            videoId: 'rLgkJ-ZGILM',
+            title: 'Best Tesla Light Show #3',
+          },
+          {
+            type: 'heading',
+            text: '#4 — The crowd favorite',
+          },
+          {
+            type: 'paragraph',
+            text: "This show has racked up some serious views, and for good reason. It's got mass appeal — the song choice is recognizable, the choreography is fun, and it works brilliantly as a live performance at a car meet. The kind of show that gathers a crowd.",
+          },
+          {
+            type: 'video',
+            videoId: 'V2SBQtOYOv0',
+            title: 'Best Tesla Light Show #4',
+          },
+          {
+            type: 'cta',
+            text: 'Create your own Tesla Light Show \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#5 — The one with perfect build-up',
+          },
+          {
+            type: 'paragraph',
+            text: "Patience pays off with this one. The show starts subtle, with slow fades and gentle patterns, then gradually ramps up intensity until the final drop hits and everything goes full blast. Masterful pacing that keeps you hooked from start to finish.",
+          },
+          {
+            type: 'video',
+            videoId: 'GdwiPe4LT-I',
+            title: 'Best Tesla Light Show #5',
+          },
+          {
+            type: 'heading',
+            text: '#6 — Holiday vibes done right',
+          },
+          {
+            type: 'paragraph',
+            text: "Holiday-themed Tesla light shows are a category of their own, and this one nails it. Festive, fun, and surprisingly polished. If you're planning a Christmas or Halloween light show for your driveway, this is serious inspiration material.",
+          },
+          {
+            type: 'video',
+            videoId: 'Ew9oesATRO8',
+            title: 'Best Tesla Light Show #6',
+          },
+          {
+            type: 'heading',
+            text: '#7 — The technical masterpiece',
+          },
+          {
+            type: 'paragraph',
+            text: "From a technical standpoint, this is probably the most impressive show on the list. The density of events, the variety of effects used, the way different light groups are layered — this creator clearly knows the hardware limits inside out and pushes right up to the edge.",
+          },
+          {
+            type: 'video',
+            videoId: '2qD6t-b8Z4k',
+            title: 'Best Tesla Light Show #7',
+          },
+          {
+            type: 'heading',
+            text: '#8 — Simple but effective',
+          },
+          {
+            type: 'paragraph',
+            text: "Not every great light show needs to be complex. This one proves that a well-chosen song and clean, deliberate choreography can be just as impactful as a 500-event extravaganza. Sometimes less really is more.",
+          },
+          {
+            type: 'video',
+            videoId: 'VpOLMsmAIk0',
+            title: 'Best Tesla Light Show #8',
+          },
+          {
+            type: 'cta',
+            text: 'Download LightShow Studio — it\'s free \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#9 — The cinematic experience',
+          },
+          {
+            type: 'paragraph',
+            text: "This show feels like watching a short film. The music, the lighting transitions, the way the intensity ebbs and flows — it tells a story. You don't just watch this one, you experience it. If light shows were judged like films, this one takes the award.",
+          },
+          {
+            type: 'video',
+            videoId: 'v59uGo5Sssw',
+            title: 'Best Tesla Light Show #9',
+          },
+          {
+            type: 'heading',
+            text: '#10 — The wildcard',
+          },
+          {
+            type: 'paragraph',
+            text: "Wrapping up with something a bit different. This show has character — it's fun, it's unexpected, and it made me smile. Not every light show needs to be a technical flex. Sometimes the best ones are the ones that just make you feel something.",
+          },
+          {
+            type: 'video',
+            videoId: 'Y4M-9o10LKU',
+            title: 'Best Tesla Light Show #10',
+          },
+          {
+            type: 'heading',
+            text: 'Ready to create your own Tesla Light Show?',
+          },
+          {
+            type: 'paragraph',
+            text: "If watching these 10 shows made you think \"I want to do that\" — good, that's exactly why I put this list together. Creating a Tesla light show used to require desktop software and a steep learning curve. Not anymore.",
+          },
+          {
+            type: 'paragraph',
+            text: "LightShow Studio lets you create Tesla light shows directly from your phone. Pick a song, place light events on a visual timeline (or let the AI generate a full show in seconds), and export a .fseq file ready for your Tesla. No coding, no complex setup — just tap, create, and drive.",
+          },
+          {
+            type: 'cta',
+            text: 'Create your Tesla Light Show now \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      fr: {
+        title: 'Top 10 des meilleurs Tesla Light Shows — Les créations les plus impressionnantes',
+        description:
+          "J'ai recherché pour vous les meilleurs Tesla light shows sur YouTube. Voici le top 10 des shows les plus impressionnants, avec les vidéos à regarder directement. Inspirez-vous et créez le vôtre.",
+        content: [
+          {
+            type: 'paragraph',
+            text: "Les Tesla light shows ont énormément évolué depuis que la fonctionnalité est sortie. Ce qui était un simple Easter egg est devenu un véritable art, avec des créateurs qui repoussent les limites de ce que 21 éléments contrôlables peuvent faire quand ils sont parfaitement synchronisés sur de la musique. J'ai passé pas mal d'heures à regarder des compilations sur YouTube pour que vous n'ayez pas à le faire — et voici les 10 meilleurs que j'ai trouvés.",
+          },
+          {
+            type: 'paragraph',
+            text: "Que vous cherchiez de la précision technique, de la chorégraphie créative, ou juste quelque chose qui va vous scotcher, cette liste a tout. Et si l'un de ces shows vous donne envie de créer le vôtre — c'est un peu le but.",
+          },
+          {
+            type: 'heading',
+            text: '#1 — Celui qui met la barre haut',
+          },
+          {
+            type: 'paragraph',
+            text: "On commence fort avec un show qui définit à peu près ce qu'un excellent Tesla light show doit être. Le timing est chirurgical, le choix de musique est parfait, et chaque transition semble intentionnelle. C'est le genre de show qui vous donne immédiatement envie de créer le vôtre.",
+          },
+          {
+            type: 'video',
+            videoId: 'Opu6wukjSE4',
+            title: 'Meilleur Tesla Light Show #1',
+          },
+          {
+            type: 'heading',
+            text: '#2 — La synchronisation à son meilleur',
+          },
+          {
+            type: 'paragraph',
+            text: "Celui-ci, c'est de la précision pure. Chaque beat, chaque drop, chaque subtilité dans la musique se reflète dans les lumières. Le créateur a clairement passé des heures à ajuster chaque événement pour qu'il tombe pile sur le temps. Le résultat est hypnotisant.",
+          },
+          {
+            type: 'video',
+            videoId: 'zTJ9WSJ8HF8',
+            title: 'Meilleur Tesla Light Show #2',
+          },
+          {
+            type: 'heading',
+            text: '#3 — Utilisation créative de tous les éléments',
+          },
+          {
+            type: 'paragraph',
+            text: "Ce que j'adore dans ce show, c'est comment il utilise toute la gamme des éléments contrôlables de la Tesla. Vitres, rétros, coffre, trappe de charge — rien n'est laissé de côté. C'est pas juste des phares qui clignotent sur le rythme. Les séquences de window dance sont particulièrement réussies.",
+          },
+          {
+            type: 'video',
+            videoId: 'rLgkJ-ZGILM',
+            title: 'Meilleur Tesla Light Show #3',
+          },
+          {
+            type: 'heading',
+            text: '#4 — Le favori du public',
+          },
+          {
+            type: 'paragraph',
+            text: "Ce show a accumulé pas mal de vues, et c'est mérité. Il a un attrait universel — la chanson est reconnaissable, la chorégraphie est fun, et ça marche à merveille en live dans un rassemblement. Le genre de show qui attire une foule.",
+          },
+          {
+            type: 'video',
+            videoId: 'V2SBQtOYOv0',
+            title: 'Meilleur Tesla Light Show #4',
+          },
+          {
+            type: 'cta',
+            text: 'Créez votre propre Tesla Light Show \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#5 — Celui avec le build-up parfait',
+          },
+          {
+            type: 'paragraph',
+            text: "La patience paie avec celui-là. Le show commence doucement, avec des fondus lents et des patterns subtils, puis monte progressivement en intensité jusqu'au drop final où tout explose. Un rythme maîtrisé qui vous tient en haleine du début à la fin.",
+          },
+          {
+            type: 'video',
+            videoId: 'GdwiPe4LT-I',
+            title: 'Meilleur Tesla Light Show #5',
+          },
+          {
+            type: 'heading',
+            text: '#6 — L\'ambiance fêtes, bien faite',
+          },
+          {
+            type: 'paragraph',
+            text: "Les Tesla light shows sur le thème des fêtes, c'est une catégorie à part, et celui-ci tape dans le mille. Festif, fun, et étonnamment soigné. Si vous préparez un light show de Noël ou d'Halloween pour votre allée, c'est une sacrée source d'inspiration.",
+          },
+          {
+            type: 'video',
+            videoId: 'Ew9oesATRO8',
+            title: 'Meilleur Tesla Light Show #6',
+          },
+          {
+            type: 'heading',
+            text: '#7 — Le chef-d\'œuvre technique',
+          },
+          {
+            type: 'paragraph',
+            text: "D'un point de vue technique, c'est probablement le show le plus impressionnant de la liste. La densité d'événements, la variété d'effets utilisés, la façon dont les différents groupes de lumières sont superposés — ce créateur connaît clairement les limites hardware par cœur et pousse jusqu'au bout.",
+          },
+          {
+            type: 'video',
+            videoId: '2qD6t-b8Z4k',
+            title: 'Meilleur Tesla Light Show #7',
+          },
+          {
+            type: 'heading',
+            text: '#8 — Simple mais efficace',
+          },
+          {
+            type: 'paragraph',
+            text: "Tous les grands light shows n'ont pas besoin d'être complexes. Celui-ci prouve qu'une chanson bien choisie et une chorégraphie propre et réfléchie peuvent avoir autant d'impact qu'une extravagance à 500 événements. Parfois, moins c'est vraiment plus.",
+          },
+          {
+            type: 'video',
+            videoId: 'VpOLMsmAIk0',
+            title: 'Meilleur Tesla Light Show #8',
+          },
+          {
+            type: 'cta',
+            text: 'Téléchargez LightShow Studio — c\'est gratuit \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#9 — L\'expérience cinématique',
+          },
+          {
+            type: 'paragraph',
+            text: "Ce show donne l'impression de regarder un court-métrage. La musique, les transitions de lumière, la façon dont l'intensité monte et descend — ça raconte une histoire. On ne regarde pas juste, on vit l'expérience. Si les light shows étaient jugés comme des films, celui-ci remporterait le prix.",
+          },
+          {
+            type: 'video',
+            videoId: 'v59uGo5Sssw',
+            title: 'Meilleur Tesla Light Show #9',
+          },
+          {
+            type: 'heading',
+            text: '#10 — Le joker',
+          },
+          {
+            type: 'paragraph',
+            text: "On termine avec quelque chose d'un peu différent. Ce show a du caractère — c'est fun, c'est inattendu, et ça m'a fait sourire. Pas tous les light shows ont besoin d'être une démonstration technique. Parfois les meilleurs sont ceux qui vous font simplement ressentir quelque chose.",
+          },
+          {
+            type: 'video',
+            videoId: 'Y4M-9o10LKU',
+            title: 'Meilleur Tesla Light Show #10',
+          },
+          {
+            type: 'heading',
+            text: 'Envie de créer votre propre Tesla Light Show ?',
+          },
+          {
+            type: 'paragraph',
+            text: "Si regarder ces 10 shows vous a fait penser \"je veux faire ça\" — tant mieux, c'est exactement pour ça que j'ai fait cette liste. Créer un Tesla light show nécessitait avant un logiciel desktop et une courbe d'apprentissage raide. Ce n'est plus le cas.",
+          },
+          {
+            type: 'paragraph',
+            text: "LightShow Studio vous permet de créer des Tesla light shows directement depuis votre téléphone. Choisissez une chanson, placez des événements lumineux sur une timeline visuelle (ou laissez l'IA générer un show complet en quelques secondes), et exportez un fichier .fseq prêt pour votre Tesla. Pas de code, pas de config compliquée — touchez, créez, roulez.",
+          },
+          {
+            type: 'cta',
+            text: 'Créez votre Tesla Light Show maintenant \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      de: {
+        title: 'Top 10 der besten Tesla Light Shows — Die beeindruckendsten Kreationen',
+        description:
+          'Wir haben Hunderte Tesla Light Shows angeschaut, damit Sie es nicht müssen. Hier sind die 10 besten Tesla Light Shows aller Zeiten — mit eingebetteten Videos.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Tesla Light Shows haben sich enorm weiterentwickelt. Was als lustiges Easter Egg begann, ist zu einer echten Kunstform geworden. Ich habe viele Stunden auf YouTube verbracht und die besten Shows herausgesucht — hier sind meine Top 10.',
+          },
+          {
+            type: 'heading',
+            text: '#1 — Die Messlatte',
+          },
+          {
+            type: 'paragraph',
+            text: 'Wir starten stark mit einer Show, die definiert, wie eine großartige Tesla Light Show aussehen sollte. Timing, Musikwahl und Übergänge — alles perfekt.',
+          },
+          {
+            type: 'video',
+            videoId: 'Opu6wukjSE4',
+            title: 'Beste Tesla Light Show #1',
+          },
+          {
+            type: 'heading',
+            text: '#2 — Perfekte Synchronisation',
+          },
+          {
+            type: 'paragraph',
+            text: 'Jeder Beat, jeder Drop wird in den Lichtern reflektiert. Der Ersteller hat offensichtlich Stunden damit verbracht, jedes Event perfekt zu timen.',
+          },
+          {
+            type: 'video',
+            videoId: 'zTJ9WSJ8HF8',
+            title: 'Beste Tesla Light Show #2',
+          },
+          {
+            type: 'heading',
+            text: '#3 — Kreative Nutzung aller Elemente',
+          },
+          {
+            type: 'paragraph',
+            text: 'Diese Show nutzt die volle Bandbreite der steuerbaren Tesla-Elemente. Fenster, Spiegel, Kofferraum, Ladeklappe — nichts wird ausgelassen.',
+          },
+          {
+            type: 'video',
+            videoId: 'rLgkJ-ZGILM',
+            title: 'Beste Tesla Light Show #3',
+          },
+          {
+            type: 'heading',
+            text: '#4 — Der Publikumsliebling',
+          },
+          {
+            type: 'paragraph',
+            text: 'Diese Show hat aus gutem Grund viele Aufrufe. Erkennbarer Song, spaßige Choreografie — perfekt für ein Live-Event.',
+          },
+          {
+            type: 'video',
+            videoId: 'V2SBQtOYOv0',
+            title: 'Beste Tesla Light Show #4',
+          },
+          {
+            type: 'cta',
+            text: 'Erstellen Sie Ihre eigene Tesla Light Show \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#5 — Der perfekte Aufbau',
+          },
+          {
+            type: 'paragraph',
+            text: 'Startet subtil und steigert sich allmählich bis zum finalen Drop. Meisterhaftes Pacing.',
+          },
+          {
+            type: 'video',
+            videoId: 'GdwiPe4LT-I',
+            title: 'Beste Tesla Light Show #5',
+          },
+          {
+            type: 'heading',
+            text: '#6 — Feiertags-Stimmung perfekt umgesetzt',
+          },
+          {
+            type: 'paragraph',
+            text: 'Feiertags-Shows sind eine Kategorie für sich, und diese hier trifft ins Schwarze. Festlich, spaßig und überraschend poliert.',
+          },
+          {
+            type: 'video',
+            videoId: 'Ew9oesATRO8',
+            title: 'Beste Tesla Light Show #6',
+          },
+          {
+            type: 'heading',
+            text: '#7 — Das technische Meisterwerk',
+          },
+          {
+            type: 'paragraph',
+            text: 'Technisch gesehen die beeindruckendste Show der Liste. Dichte der Events, Effektvielfalt und geschichtete Lichtgruppen — dieser Ersteller kennt die Hardware-Grenzen genau.',
+          },
+          {
+            type: 'video',
+            videoId: '2qD6t-b8Z4k',
+            title: 'Beste Tesla Light Show #7',
+          },
+          {
+            type: 'heading',
+            text: '#8 — Einfach aber wirkungsvoll',
+          },
+          {
+            type: 'paragraph',
+            text: 'Beweist, dass ein gut gewählter Song und saubere Choreografie genauso wirkungsvoll sein können wie eine 500-Event-Show.',
+          },
+          {
+            type: 'video',
+            videoId: 'VpOLMsmAIk0',
+            title: 'Beste Tesla Light Show #8',
+          },
+          {
+            type: 'cta',
+            text: 'LightShow Studio kostenlos herunterladen \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#9 — Das Kinoerlebnis',
+          },
+          {
+            type: 'paragraph',
+            text: 'Diese Show fühlt sich an wie ein Kurzfilm. Die Musik, die Übergänge — alles erzählt eine Geschichte.',
+          },
+          {
+            type: 'video',
+            videoId: 'v59uGo5Sssw',
+            title: 'Beste Tesla Light Show #9',
+          },
+          {
+            type: 'heading',
+            text: '#10 — Der Joker',
+          },
+          {
+            type: 'paragraph',
+            text: 'Zum Abschluss etwas Anderes. Diese Show hat Charakter — spaßig, unerwartet, und sie hat mich zum Lächeln gebracht.',
+          },
+          {
+            type: 'video',
+            videoId: 'Y4M-9o10LKU',
+            title: 'Beste Tesla Light Show #10',
+          },
+          {
+            type: 'heading',
+            text: 'Bereit, Ihre eigene Tesla Light Show zu erstellen?',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio ermöglicht es Ihnen, Tesla Light Shows direkt vom Handy zu erstellen. Song wählen, Events auf der Timeline platzieren (oder die KI ein komplettes Show generieren lassen), und eine .fseq-Datei exportieren. Kostenlos auf iOS und Android.',
+          },
+          {
+            type: 'cta',
+            text: 'Tesla Light Show jetzt erstellen \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      es: {
+        title: 'Top 10 mejores Tesla Light Shows — Las creaciones más impresionantes',
+        description:
+          'Hemos visto cientos de Tesla light shows para que no tengas que hacerlo. Aquí están los 10 mejores Tesla light shows jamás creados — con vídeos incluidos.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Los Tesla light shows han evolucionado muchísimo. Lo que empezó como un Easter egg divertido se ha convertido en un verdadero arte. He pasado bastantes horas viendo compilaciones en YouTube para que no tengas que hacerlo — y aquí están los 10 mejores que encontré.',
+          },
+          {
+            type: 'heading',
+            text: '#1 — El que pone el listón alto',
+          },
+          {
+            type: 'paragraph',
+            text: 'Empezamos fuerte con un show que define lo que debe ser un gran Tesla light show. Timing perfecto, elección de música impecable y transiciones intencionales.',
+          },
+          {
+            type: 'video',
+            videoId: 'Opu6wukjSE4',
+            title: 'Mejor Tesla Light Show #1',
+          },
+          {
+            type: 'heading',
+            text: '#2 — Sincronización pura',
+          },
+          {
+            type: 'paragraph',
+            text: 'Cada beat, cada drop se refleja en las luces. El creador pasó horas ajustando cada evento para que cayera exactamente a tiempo.',
+          },
+          {
+            type: 'video',
+            videoId: 'zTJ9WSJ8HF8',
+            title: 'Mejor Tesla Light Show #2',
+          },
+          {
+            type: 'heading',
+            text: '#3 — Uso creativo de todos los elementos',
+          },
+          {
+            type: 'paragraph',
+            text: 'Este show usa toda la gama de elementos controlables del Tesla. Ventanas, espejos, maletero, puerto de carga — nada queda sin usar.',
+          },
+          {
+            type: 'video',
+            videoId: 'rLgkJ-ZGILM',
+            title: 'Mejor Tesla Light Show #3',
+          },
+          {
+            type: 'heading',
+            text: '#4 — El favorito del público',
+          },
+          {
+            type: 'paragraph',
+            text: 'Este show ha acumulado muchas vistas, y con razón. Canción reconocible, coreografía divertida — funciona genial en vivo.',
+          },
+          {
+            type: 'video',
+            videoId: 'V2SBQtOYOv0',
+            title: 'Mejor Tesla Light Show #4',
+          },
+          {
+            type: 'cta',
+            text: 'Crea tu propio Tesla Light Show \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#5 — El build-up perfecto',
+          },
+          {
+            type: 'paragraph',
+            text: 'Empieza suave y sube de intensidad hasta el drop final. Un ritmo magistral que te mantiene enganchado.',
+          },
+          {
+            type: 'video',
+            videoId: 'GdwiPe4LT-I',
+            title: 'Mejor Tesla Light Show #5',
+          },
+          {
+            type: 'heading',
+            text: '#6 — Ambiente festivo bien hecho',
+          },
+          {
+            type: 'paragraph',
+            text: 'Los shows navideños son una categoría aparte, y este da en el clavo. Festivo, divertido y sorprendentemente pulido.',
+          },
+          {
+            type: 'video',
+            videoId: 'Ew9oesATRO8',
+            title: 'Mejor Tesla Light Show #6',
+          },
+          {
+            type: 'heading',
+            text: '#7 — La obra maestra técnica',
+          },
+          {
+            type: 'paragraph',
+            text: 'Técnicamente, la show más impresionante de la lista. Densidad de eventos, variedad de efectos y capas de luces — este creador conoce los límites del hardware al dedillo.',
+          },
+          {
+            type: 'video',
+            videoId: '2qD6t-b8Z4k',
+            title: 'Mejor Tesla Light Show #7',
+          },
+          {
+            type: 'heading',
+            text: '#8 — Simple pero efectivo',
+          },
+          {
+            type: 'paragraph',
+            text: 'Demuestra que una canción bien elegida y una coreografía limpia pueden tener tanto impacto como una extravagancia de 500 eventos.',
+          },
+          {
+            type: 'video',
+            videoId: 'VpOLMsmAIk0',
+            title: 'Mejor Tesla Light Show #8',
+          },
+          {
+            type: 'cta',
+            text: 'Descarga LightShow Studio — es gratis \u2192',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '#9 — La experiencia cinematográfica',
+          },
+          {
+            type: 'paragraph',
+            text: 'Este show se siente como ver un cortometraje. La música, las transiciones — todo cuenta una historia.',
+          },
+          {
+            type: 'video',
+            videoId: 'v59uGo5Sssw',
+            title: 'Mejor Tesla Light Show #9',
+          },
+          {
+            type: 'heading',
+            text: '#10 — El comodín',
+          },
+          {
+            type: 'paragraph',
+            text: 'Terminamos con algo diferente. Este show tiene carácter — es divertido, inesperado, y me hizo sonreír. A veces los mejores son los que simplemente te hacen sentir algo.',
+          },
+          {
+            type: 'video',
+            videoId: 'Y4M-9o10LKU',
+            title: 'Mejor Tesla Light Show #10',
+          },
+          {
+            type: 'heading',
+            text: '¿Listo para crear tu propio Tesla Light Show?',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio te permite crear Tesla light shows directamente desde tu teléfono. Elige una canción, coloca eventos en la timeline (o deja que la IA genere un show completo), y exporta un .fseq listo para tu Tesla. Gratis en iOS y Android.',
+          },
+          {
+            type: 'cta',
+            text: 'Crea tu Tesla Light Show ahora \u2192',
             href: '/#download',
           },
         ],

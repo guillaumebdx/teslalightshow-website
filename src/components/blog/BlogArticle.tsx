@@ -61,6 +61,19 @@ function ContentBlock({ block, localePath }: { block: BlockType; localePath: (p:
           ))}
         </ul>
       )
+    case 'video':
+      return (
+        <div className="my-2 aspect-video w-full overflow-hidden rounded-xl border border-border-light shadow-lg">
+          <iframe
+            src={`https://www.youtube.com/embed/${block.videoId}`}
+            title={block.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+            className="h-full w-full"
+          />
+        </div>
+      )
     default:
       return null
   }

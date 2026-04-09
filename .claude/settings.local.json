@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(xargs grep:*)",
+      "Bash(ls -la /c/Users/guill/CascadeProjects/lightshowstudio/src/app/[lang]/blog/[slug]/)"
+    ]
+  }
+}
