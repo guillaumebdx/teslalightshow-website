@@ -3,6 +3,8 @@ import teslalightshareImg from '@/assets/blog/tesla_light_share_screenshot.png'
 import xlightsImg from '@/assets/blog/xlights_overview.png'
 import glovebox from '@/assets/blog/boite-a-gant.jpg'
 import exportScreen from '@/assets/blog/export.png'
+import bestSongsImg from '@/assets/blog/lightshow_best_songs.png'
+import doesntWorkImg from '@/assets/blog/lightshow_doesnt_work.png'
 
 // --------------- Types ---------------
 type ImageSrc = string | { src: string; height?: number; width?: number }
@@ -14,6 +16,7 @@ export type BlockType =
   | { type: 'cta'; text: string; href: string }
   | { type: 'list'; items: string[] }
   | { type: 'video'; videoId: string; title: string }
+  | { type: 'spotify'; trackId: string; title: string }
 
 export interface ArticleTranslation {
   title: string
@@ -930,6 +933,1168 @@ export const articles: BlogArticle[] = [
           {
             type: 'cta',
             text: 'Crea y exporta tu Tesla Light Show \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: 'best-songs-tesla-light-show',
+    date: '2026-04-10',
+    thumbnail: bestSongsImg,
+    translations: {
+      en: {
+        title: '10 Best Songs for a Tesla Light Show — Why They Work & How to Use Them',
+        description:
+          'Not every song makes a great Tesla light show. We picked 10 tracks that are genuinely perfect for light choreography — with Spotify embeds and explanations of why each one works.',
+        content: [
+          {
+            type: 'paragraph',
+            text: "Choosing the right song is half the battle when creating a Tesla light show. A great track isn't just about personal taste — it needs a clear beat structure, dynamic contrast, and enough musical variation to make a choreography interesting. I've tested dozens of songs and here are the 10 that work best, with a breakdown of exactly why each one is a good pick.",
+          },
+          {
+            type: 'paragraph',
+            text: "Quick tip before we dive in: the best light show songs tend to have a strong, predictable beat (so your lights land on cue), clear sections with different energy levels (verse vs chorus vs bridge), and a tempo that isn't too fast — above 160 BPM and you'll start hitting Tesla's command limits.",
+          },
+          {
+            type: 'heading',
+            text: '1. Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'paragraph',
+            text: "The ultimate Tesla light show song. Bohemian Rhapsody has everything: a gentle piano intro perfect for slow fades, a calm verse section, an explosive operatic middle, and a hard rock finale. The dramatic shifts in tempo and energy give you natural moments to switch between subtle and full-blast choreography. Every section feels different, which means you can design six completely distinct light sequences in one show. Bonus: everyone in the crowd knows it, which makes the sync that much more satisfying.",
+          },
+          {
+            type: 'spotify',
+            trackId: '4339TrijLVEhPLlbMrVsW4',
+            title: 'Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'heading',
+            text: '2. Thunderstruck — AC/DC',
+          },
+          {
+            type: 'paragraph',
+            text: "That iconic opening guitar riff is tailor-made for a dramatic reveal. Start with a single light blinking to each \"thunder\" hit, then explode into full choreography when the whole band drops in. The song has a relentless, driving rhythm that makes every beat placement feel powerful. The consistent tempo (around 134 BPM) is easy to work with, and the build-up structure rewards patience — making the drop feel even bigger.",
+          },
+          {
+            type: 'spotify',
+            trackId: '57bgtoPSgt236HzfBOd8kj',
+            title: 'Thunderstruck — AC/DC',
+          },
+          {
+            type: 'heading',
+            text: '3. Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'paragraph',
+            text: "This one is modern synthwave at its finest, and it translates brilliantly to light choreography. The song has a crystal-clear 8-bar structure, a driving 4/4 beat at 171 BPM, and a distinctive synth that makes it very easy to place events on the off-beats for maximum effect. The chorus is so recognizable that even subtle light patterns feel intentional when they land on that hook. Great for a sleek, modern feel.",
+          },
+          {
+            type: 'spotify',
+            trackId: '04948IGlqY1vSh7AHbueiQ',
+            title: 'Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'heading',
+            text: '4. Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'paragraph',
+            text: "Pure groove. Uptown Funk has one of the clearest, most satisfying rhythmic structures of any pop song from the last decade. The funk backbeat is extremely easy to sync to, the horn stabs give you natural accent points, and the tempo (115 BPM) is comfortable enough to add complex choreography without hitting hardware limits. The call-and-response structure of the verses also creates natural on/off patterns for your lights. Crowd-pleaser guaranteed.",
+          },
+          {
+            type: 'spotify',
+            trackId: '32OlwWuMpZ6b0aN2RZOeMS',
+            title: 'Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'cta',
+            text: 'Create your Tesla Light Show with LightShow Studio →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '5. Mr. Brightside — The Killers',
+          },
+          {
+            type: 'paragraph',
+            text: "Mr. Brightside is the definition of a song that builds. It starts sparse and explodes into one of the most anthemic choruses in indie rock history. That build-up is gold for light shows — you can start with almost nothing, one or two elements blinking quietly, then go full throttle when the chorus hits. The steady 148 BPM is very workable, and the guitar-driven sections give you clear markers for every light transition. Hard not to get emotional watching a Tesla do this one right.",
+          },
+          {
+            type: 'spotify',
+            trackId: '003vvx7Niy0yvhvHt4a68B',
+            title: 'Mr. Brightside — The Killers',
+          },
+          {
+            type: 'heading',
+            text: '6. Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'paragraph',
+            text: "Four hits. Pause. Four hits. That iconic opening is one of the best light show intros you can choreograph. Each hit of those power chords is a perfect moment for a burst of lights, with silence in between for maximum dramatic effect. The rest of the song keeps a solid, punchy rhythm at 109 BPM with clear guitar accents throughout. It's also a song that makes people smile the second they hear those first notes — instant crowd engagement.",
+          },
+          {
+            type: 'spotify',
+            trackId: '2KH16WveTQWT6KOG9Rg6e2',
+            title: 'Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'heading',
+            text: "7. Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'paragraph',
+            text: "Fast, fun, and relentlessly energetic. Don't Stop Me Now sits at around 156 BPM which puts it on the higher end of comfortable — but the payoff is a show that feels like it's constantly moving. The piano runs and Freddie's vocal phrasing create natural accents that are perfect for rapid-fire light patterns. Best used for party settings where you want energy from start to finish, no slow moments, no breathing room. Pure joy.",
+          },
+          {
+            type: 'spotify',
+            trackId: '3lrNq7iGL5r3KS93YiKAbC',
+            title: "Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'heading',
+            text: "8. Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'paragraph',
+            text: "That guitar intro is one of the most recognizable riffs in rock history — and it's perfect for a slow, deliberate light sequence that builds note by note. The song spends a long time in a relatively calm verse before the chorus hits, which gives you space to be creative with subtle choreography. When Axl starts belting and the full band kicks in, you transition to full intensity. The contrast between intro and climax makes for a genuinely cinematic light show.",
+          },
+          {
+            type: 'spotify',
+            trackId: '7o2CTH4ctstm8TNelqjb51',
+            title: "Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'cta',
+            text: 'Download LightShow Studio — free on iOS & Android →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '9. Levitating — Dua Lipa',
+          },
+          {
+            type: 'paragraph',
+            text: "A modern pop gem with an incredibly clean structure. Levitating sits at 103 BPM — comfortable for detailed choreography — and has a very consistent, danceable groove throughout. The disco-influenced beat gives you strong 4/4 anchors, while the synth elements add playful accent points. It's a great option if you want a show that feels upbeat and fun rather than intense. Works particularly well with smooth fade effects and the window dance mode.",
+          },
+          {
+            type: 'spotify',
+            trackId: '39LLxExYz6ewLAcYrzQQyP',
+            title: 'Levitating — Dua Lipa',
+          },
+          {
+            type: 'heading',
+            text: '10. Jingle Bell Rock — Bobby Helms (bonus: seasonal pick)',
+          },
+          {
+            type: 'paragraph',
+            text: "A wildcard, but hear me out: holiday-themed Tesla light shows are some of the most watched content in the community. Jingle Bell Rock has a simple, bouncy rhythm that's extremely easy to choreograph, a short runtime that keeps the show tight, and a universal appeal that plays well to any audience. Park outside during the holidays and you'll have people stopping to watch. Pair it with a slow neighborhood drive and you've created a memory.",
+          },
+          {
+            type: 'spotify',
+            trackId: '7vQbuQcyTflfCIOu3Uzzya',
+            title: 'Jingle Bell Rock — Bobby Helms',
+          },
+          {
+            type: 'heading',
+            text: "What makes a song great for a Tesla light show?",
+          },
+          {
+            type: 'paragraph',
+            text: "If none of these songs fit your taste, here's the framework I use to pick any track: look for a clear, consistent beat (no free-tempo sections), strong dynamic contrast between verses and choruses, a tempo between 80–155 BPM, and distinctive musical accents — drum hits, guitar stabs, synth stabs — that give you natural moments to place light events. The more musical landmarks a song has, the more satisfying your choreography will feel.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Tempo sweet spot: 80–155 BPM — enough momentum without overwhelming Tesla\'s command limits',
+              'Dynamic contrast: songs that go quiet before going loud create the most dramatic light shows',
+              'Clear structure: verses, choruses and bridges give you distinct sections to choreograph differently',
+              'Musical accents: drum hits, guitar stabs or synth stabs are your best friends for precise event placement',
+              'Recognizability: a song the audience knows makes the sync feel more impressive',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Ready to start creating?',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio lets you import any MP3 from your phone (up to 5 minutes), visualize the waveform on a timeline, and place light events for each of the 21 controllable Tesla elements with tap precision. Or just let the built-in AI analyze your chosen track and generate a complete synchronized show in seconds — then fine-tune the details yourself.',
+          },
+          {
+            type: 'cta',
+            text: 'Create your Tesla Light Show now →',
+            href: '/#download',
+          },
+        ],
+      },
+      fr: {
+        title: '10 meilleures chansons pour un Tesla Light Show — Pourquoi elles marchent',
+        description:
+          "Toutes les chansons ne font pas un bon Tesla light show. On a sélectionné 10 tracks parfaites pour la chorégraphie lumineuse — avec des embeds Spotify et les raisons concrètes pour lesquelles elles fonctionnent.",
+        content: [
+          {
+            type: 'paragraph',
+            text: "Choisir la bonne chanson, c'est la moitié du travail quand on crée un Tesla light show. Un bon track ne se choisit pas uniquement selon ses goûts — il faut une structure rythmique claire, du contraste dynamique, et suffisamment de variation musicale pour rendre la chorégraphie intéressante. Voici les 10 chansons qui marchent le mieux, avec une explication concrète de pourquoi chacune est un bon choix.",
+          },
+          {
+            type: 'paragraph',
+            text: "Petit conseil avant de commencer : les meilleures chansons pour un light show ont généralement un beat fort et prévisible (vos lumières tombent pile), des sections clairement distinctes avec différents niveaux d'énergie (couplet vs refrain vs pont), et un tempo qui n'est pas trop rapide — au-dessus de 160 BPM, on commence à toucher les limites de commandes de Tesla.",
+          },
+          {
+            type: 'heading',
+            text: '1. Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'paragraph',
+            text: "La chanson de Tesla light show ultime. Bohemian Rhapsody a tout : une intro piano douce parfaite pour des fondus lents, un couplet calme, un milieu opératique explosif, et un final rock pur. Les changements dramatiques de tempo et d'énergie offrent des moments naturels pour alterner entre chorégraphie subtile et pleine puissance. Chaque section est différente, ce qui signifie que vous pouvez concevoir six séquences lumineuses complètement distinctes dans un seul show. Bonus : tout le monde dans le public la connaît, ce qui rend la synchronisation encore plus satisfaisante.",
+          },
+          {
+            type: 'spotify',
+            trackId: '4339TrijLVEhPLlbMrVsW4',
+            title: 'Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'heading',
+            text: '2. Thunderstruck — AC/DC',
+          },
+          {
+            type: 'paragraph',
+            text: "Ce riff de guitare iconique en ouverture est fait sur mesure pour une révélation dramatique. Commencez avec une seule lumière qui clignote à chaque \"thunder\", puis explosez en chorégraphie totale quand tout le groupe débarque. La chanson a un rythme implacable qui rend chaque placement de beat puissant. Le tempo constant (environ 134 BPM) est confortable, et la structure en build-up récompense la patience — le drop n'en est que plus fort.",
+          },
+          {
+            type: 'spotify',
+            trackId: '57bgtoPSgt236HzfBOd8kj',
+            title: 'Thunderstruck — AC/DC',
+          },
+          {
+            type: 'heading',
+            text: '3. Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'paragraph',
+            text: "De la synthwave moderne au sommet de son art, et ça se traduit parfaitement en chorégraphie lumineuse. La chanson a une structure à 8 mesures cristalline, un beat 4/4 bien marqué à 171 BPM, et un synthé caractéristique qui facilite le placement d'événements sur les temps faibles pour un maximum d'effet. Le refrain est tellement reconnaissable que même des patterns discrets semblent intentionnels quand ils tombent sur ce hook.",
+          },
+          {
+            type: 'spotify',
+            trackId: '04948IGlqY1vSh7AHbueiQ',
+            title: 'Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'heading',
+            text: '4. Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'paragraph',
+            text: "Du groove pur. Uptown Funk a une des structures rythmiques les plus claires et satisfaisantes du pop des dix dernières années. Le backbeat funk est extrêmement facile à synchroniser, les cuivres offrent des points d'accent naturels, et le tempo (115 BPM) est suffisamment confortable pour ajouter des chorégraphies complexes sans atteindre les limites hardware. La structure appel-réponse des couplets crée aussi des patterns on/off naturels pour vos lumières.",
+          },
+          {
+            type: 'spotify',
+            trackId: '32OlwWuMpZ6b0aN2RZOeMS',
+            title: 'Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'cta',
+            text: 'Créez votre Tesla Light Show avec LightShow Studio →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '5. Mr. Brightside — The Killers',
+          },
+          {
+            type: 'paragraph',
+            text: "Mr. Brightside est la définition d'une chanson qui monte. Elle commence sparse et explose en l'un des refrains les plus anthémiques du rock indé. Ce build-up est en or pour les light shows — commencez avec presque rien, un ou deux éléments qui clignotent doucement, puis passez à pleine puissance quand le refrain arrive. Les 148 BPM sont très gérables, et les sections guitare fournissent des repères clairs pour chaque transition lumineuse.",
+          },
+          {
+            type: 'spotify',
+            trackId: '003vvx7Niy0yvhvHt4a68B',
+            title: 'Mr. Brightside — The Killers',
+          },
+          {
+            type: 'heading',
+            text: '6. Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'paragraph',
+            text: "Quatre coups. Silence. Quatre coups. Cette ouverture iconique est l'une des meilleures intros de light show à chorégraphier. Chaque frappe de ces power chords est un moment parfait pour une explosion de lumières, avec le silence entre les deux pour un effet dramatique maximum. Le reste de la chanson maintient un rythme solide et nerveux à 109 BPM avec des accents guitare clairs tout au long. Et c'est une chanson qui fait sourire les gens dès qu'ils entendent ces premières notes.",
+          },
+          {
+            type: 'spotify',
+            trackId: '2KH16WveTQWT6KOG9Rg6e2',
+            title: 'Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'heading',
+            text: "7. Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'paragraph',
+            text: "Rapide, fun et d'une énergie implacable. Don't Stop Me Now tourne autour de 156 BPM — dans le haut de la fourchette confortable — mais la récompense est un show qui semble constamment en mouvement. Les runs de piano et le phrasé vocal de Freddie créent des accents naturels parfaits pour des patterns lumineux rapides. À utiliser pour des contextes fête où vous voulez de l'énergie du début à la fin. Aucun temps mort. Que de la joie.",
+          },
+          {
+            type: 'spotify',
+            trackId: '3lrNq7iGL5r3KS93YiKAbC',
+            title: "Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'heading',
+            text: "8. Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'paragraph',
+            text: "Ce riff de guitare en intro est l'un des plus reconnaissables de l'histoire du rock — et il est parfait pour une séquence lumineuse lente et délibérée qui monte note par note. La chanson passe un long moment dans un couplet relativement calme avant que le refrain n'arrive, ce qui vous laisse de l'espace pour une chorégraphie subtile et créative. Quand Axl commence à hurler et que tout le groupe lâche, on passe à pleine intensité. Le contraste entre l'intro et le climax donne un show vraiment cinématique.",
+          },
+          {
+            type: 'spotify',
+            trackId: '7o2CTH4ctstm8TNelqjb51',
+            title: "Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'cta',
+            text: 'Téléchargez LightShow Studio — gratuit sur iOS & Android →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '9. Levitating — Dua Lipa',
+          },
+          {
+            type: 'paragraph',
+            text: "Une pépite pop moderne avec une structure incroyablement propre. Levitating tourne à 103 BPM — confortable pour une chorégraphie détaillée — et a un groove dansant très constant tout au long. Le beat d'influence disco offre des ancres 4/4 solides, tandis que les éléments de synthé ajoutent des points d'accent ludiques. C'est une excellente option si vous voulez un show qui se sent positif et fun plutôt qu'intense. Fonctionne particulièrement bien avec des effets de fondu smooth et le mode window dance.",
+          },
+          {
+            type: 'spotify',
+            trackId: '39LLxExYz6ewLAcYrzQQyP',
+            title: 'Levitating — Dua Lipa',
+          },
+          {
+            type: 'heading',
+            text: '10. Jingle Bell Rock — Bobby Helms (bonus : le choix saisonnier)',
+          },
+          {
+            type: 'paragraph',
+            text: "Un joker, mais écoutez-moi : les Tesla light shows sur le thème des fêtes sont parmi les contenus les plus regardés dans la communauté. Jingle Bell Rock a un rythme simple et rebondissant qui se chorégraphie très facilement, une durée courte qui garde le show compact, et un attrait universel qui plaît à n'importe quel public. Garez-vous dehors pendant les fêtes et vous aurez des gens qui s'arrêtent pour regarder.",
+          },
+          {
+            type: 'spotify',
+            trackId: '7vQbuQcyTflfCIOu3Uzzya',
+            title: 'Jingle Bell Rock — Bobby Helms',
+          },
+          {
+            type: 'heading',
+            text: "Qu'est-ce qui fait une bonne chanson de Tesla light show ?",
+          },
+          {
+            type: 'paragraph',
+            text: "Si aucune de ces chansons ne correspond à vos goûts, voici le cadre que j'utilise pour choisir n'importe quel track : cherchez un beat clair et constant (pas de sections à tempo libre), un fort contraste dynamique entre couplets et refrains, un tempo entre 80 et 155 BPM, et des accents musicaux distinctifs — frappes de batterie, stabs de guitare, stabs de synthé — qui vous donnent des moments naturels pour placer des événements lumineux.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Tempo idéal : 80–155 BPM — assez d\'élan sans dépasser les limites de commandes Tesla',
+              'Contraste dynamique : les chansons qui se calment avant d\'exploser créent les light shows les plus dramatiques',
+              'Structure claire : couplets, refrains et ponts permettent de chorégraphier chaque section différemment',
+              'Accents musicaux : frappes de batterie, stabs de guitare ou de synthé sont vos meilleurs alliés pour un placement précis',
+              'Notoriété : une chanson que le public connaît rend la synchronisation encore plus impressionnante',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Prêt à créer votre light show ?',
+          },
+          {
+            type: 'paragraph',
+            text: "LightShow Studio vous permet d'importer n'importe quel MP3 depuis votre téléphone (jusqu'à 5 minutes), de visualiser la waveform sur une timeline, et de placer des événements lumineux pour chacun des 21 éléments contrôlables de votre Tesla. Ou laissez simplement l'IA intégrée analyser votre chanson et générer un show complet synchronisé en quelques secondes.",
+          },
+          {
+            type: 'cta',
+            text: 'Créez votre Tesla Light Show maintenant →',
+            href: '/#download',
+          },
+        ],
+      },
+      de: {
+        title: '10 beste Songs für eine Tesla Light Show — Warum sie funktionieren',
+        description:
+          'Nicht jeder Song eignet sich für eine Tesla Light Show. Wir haben 10 Tracks ausgewählt, die perfekt für Lichtkoreografien sind — mit Spotify-Einbettungen und Erklärungen.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Die richtige Musik zu wählen ist die halbe Miete bei einer Tesla Light Show. Ein guter Track braucht eine klare Rhythmusstruktur, dynamischen Kontrast und genug musikalische Abwechslung. Hier sind die 10 Songs, die am besten funktionieren — mit einer Erklärung warum.',
+          },
+          {
+            type: 'heading',
+            text: '1. Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'paragraph',
+            text: 'Der ultimative Tesla Light Show Song. Bohemian Rhapsody hat alles: ein sanftes Klavierintro für langsame Überblendungen, einen ruhigen Vers, ein explosives Opernstück in der Mitte und ein Rock-Finale. Die dramatischen Temposchwankungen ermöglichen komplett verschiedene Lichtkoreografien in jeder Sektion.',
+          },
+          {
+            type: 'spotify',
+            trackId: '4339TrijLVEhPLlbMrVsW4',
+            title: 'Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'heading',
+            text: '2. Thunderstruck — AC/DC',
+          },
+          {
+            type: 'paragraph',
+            text: 'Das ikonische Gitarrenriff am Anfang ist wie gemacht für eine dramatische Enthüllung. Mit jedem "Thunder" eine Lichtstrahlung — dann beim Einsetzen der Band volle Choreografie. Das konstante Tempo (134 BPM) ist angenehm zu arbeiten.',
+          },
+          {
+            type: 'spotify',
+            trackId: '57bgtoPSgt236HzfBOd8kj',
+            title: 'Thunderstruck — AC/DC',
+          },
+          {
+            type: 'heading',
+            text: '3. Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'paragraph',
+            text: 'Moderner Synthwave mit kristallklarer Struktur. Der gleichmäßige 4/4-Beat bei 171 BPM und das charakteristische Synthpads machen die Platzierung von Lichtereignissen auf Off-Beats besonders effektvoll.',
+          },
+          {
+            type: 'spotify',
+            trackId: '04948IGlqY1vSh7AHbueiQ',
+            title: 'Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'heading',
+            text: '4. Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'paragraph',
+            text: 'Reiner Groove. Der Funk-Backbeat ist extrem einfach zu synchronisieren, die Blechbläser bieten natürliche Akzentpunkte, und das Tempo (115 BPM) erlaubt komplexe Choreografie ohne Hardware-Limits zu treffen.',
+          },
+          {
+            type: 'spotify',
+            trackId: '32OlwWuMpZ6b0aN2RZOeMS',
+            title: 'Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'cta',
+            text: 'Tesla Light Show mit LightShow Studio erstellen →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '5. Mr. Brightside — The Killers',
+          },
+          {
+            type: 'paragraph',
+            text: 'Ein Song der baut. Er beginnt sparsam und explodiert in einem der anthemischsten Refrains des Indie-Rocks. Dieses Aufbauen ist Gold für Light Shows — starten Sie mit minimaler Beleuchtung und gehen Sie beim Refrain auf volle Intensität.',
+          },
+          {
+            type: 'spotify',
+            trackId: '003vvx7Niy0yvhvHt4a68B',
+            title: 'Mr. Brightside — The Killers',
+          },
+          {
+            type: 'heading',
+            text: '6. Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'paragraph',
+            text: 'Vier Schläge. Pause. Vier Schläge. Diese ikonische Eröffnung ist einer der besten Light-Show-Intros überhaupt. Jeder Power-Chord-Schlag = Lichtexplosion, das Schweigen dazwischen = maximaler Dramatik.',
+          },
+          {
+            type: 'spotify',
+            trackId: '2KH16WveTQWT6KOG9Rg6e2',
+            title: 'Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'heading',
+            text: "7. Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'paragraph',
+            text: 'Schnell, spaßig und unerbittlich energiegeladen bei ~156 BPM. Die Klavierläufe und Freddies Phrasierung schaffen natürliche Akzente für schnelle Lichtmuster. Perfekt für Party-Settings.',
+          },
+          {
+            type: 'spotify',
+            trackId: '3lrNq7iGL5r3KS93YiKAbC',
+            title: "Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'heading',
+            text: "8. Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'paragraph',
+            text: 'Das Gitarrenriff im Intro ist eines der bekanntesten im Rock — perfekt für eine langsame, aufbauende Lichtersequenz. Der ruhige Vers gibt Raum für subtile Choreografie, bevor der volle Ausbruch beim Refrain kommt.',
+          },
+          {
+            type: 'spotify',
+            trackId: '7o2CTH4ctstm8TNelqjb51',
+            title: "Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'heading',
+            text: '9. Levitating — Dua Lipa',
+          },
+          {
+            type: 'paragraph',
+            text: 'Moderner Pop mit sehr sauberer Struktur. Bei 103 BPM komfortabel für detaillierte Choreografie. Der disco-beeinflusste Beat bietet solide 4/4-Anker, die Synth-Elemente fügen spielerische Akzentpunkte hinzu.',
+          },
+          {
+            type: 'spotify',
+            trackId: '39LLxExYz6ewLAcYrzQQyP',
+            title: 'Levitating — Dua Lipa',
+          },
+          {
+            type: 'heading',
+            text: '10. Jingle Bell Rock — Bobby Helms (Bonustipp: saisonal)',
+          },
+          {
+            type: 'paragraph',
+            text: 'Holiday-Tesla-Light-Shows gehören zu den meistgesehenen in der Community. Einfacher Rhythmus, kurze Laufzeit, universelle Anziehungskraft. Stellen Sie sich in der Weihnachtszeit draußen hin und die Menschen bleiben stehen.',
+          },
+          {
+            type: 'spotify',
+            trackId: '7vQbuQcyTflfCIOu3Uzzya',
+            title: 'Jingle Bell Rock — Bobby Helms',
+          },
+          {
+            type: 'heading',
+            text: 'Bereit, loszulegen?',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio ermöglicht es Ihnen, jede MP3 zu importieren, die Wellenform auf einer Timeline zu visualisieren und Lichtereignisse für alle 21 steuerbaren Tesla-Elemente zu platzieren. Oder lassen Sie die KI Ihren Song analysieren und eine vollständige Show in Sekunden generieren.',
+          },
+          {
+            type: 'cta',
+            text: 'Tesla Light Show jetzt erstellen →',
+            href: '/#download',
+          },
+        ],
+      },
+      es: {
+        title: '10 mejores canciones para un Tesla Light Show — Por qué funcionan',
+        description:
+          'No todas las canciones hacen un buen Tesla light show. Seleccionamos 10 tracks perfectos para la coreografía de luces — con embeds de Spotify y explicaciones de por qué cada uno funciona.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Elegir la canción correcta es la mitad del trabajo al crear un Tesla light show. Una buena pista necesita una estructura rítmica clara, contraste dinámico y suficiente variación musical. Aquí están los 10 mejores, con una explicación concreta de por qué cada uno funciona.',
+          },
+          {
+            type: 'heading',
+            text: '1. Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'paragraph',
+            text: 'La canción definitiva para un Tesla light show. Tiene todo: un intro de piano suave, una sección operística explosiva y un final rock. Los cambios dramáticos de tempo ofrecen momentos naturales para alternar entre coreografías sutiles y a plena potencia.',
+          },
+          {
+            type: 'spotify',
+            trackId: '4339TrijLVEhPLlbMrVsW4',
+            title: 'Bohemian Rhapsody — Queen',
+          },
+          {
+            type: 'heading',
+            text: '2. Thunderstruck — AC/DC',
+          },
+          {
+            type: 'paragraph',
+            text: 'Ese icónico riff de guitarra está hecho para una revelación dramática. Con cada "thunder" una explosión de luces, luego coreografía completa cuando entra toda la banda. Tempo constante a 134 BPM, fácil de trabajar.',
+          },
+          {
+            type: 'spotify',
+            trackId: '57bgtoPSgt236HzfBOd8kj',
+            title: 'Thunderstruck — AC/DC',
+          },
+          {
+            type: 'heading',
+            text: '3. Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'paragraph',
+            text: 'Synthwave moderna con estructura cristalina. El beat 4/4 a 171 BPM y el sintetizador característico hacen muy fácil colocar eventos en los tiempos débiles para máximo efecto.',
+          },
+          {
+            type: 'spotify',
+            trackId: '04948IGlqY1vSh7AHbueiQ',
+            title: 'Blinding Lights — The Weeknd',
+          },
+          {
+            type: 'heading',
+            text: '4. Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'paragraph',
+            text: 'Groove puro. El backbeat funk es extremadamente fácil de sincronizar, los metales ofrecen puntos de acento naturales, y el tempo (115 BPM) permite coreografías complejas sin alcanzar los límites de hardware.',
+          },
+          {
+            type: 'spotify',
+            trackId: '32OlwWuMpZ6b0aN2RZOeMS',
+            title: 'Uptown Funk — Mark Ronson ft. Bruno Mars',
+          },
+          {
+            type: 'cta',
+            text: 'Crea tu Tesla Light Show con LightShow Studio →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: '5. Mr. Brightside — The Killers',
+          },
+          {
+            type: 'paragraph',
+            text: 'Una canción que construye. Empieza escasa y explota en uno de los estribillos más épicos del indie rock. Ese build-up es oro para los light shows — empieza con mínima iluminación y sube a plena intensidad en el estribillo.',
+          },
+          {
+            type: 'spotify',
+            trackId: '003vvx7Niy0yvhvHt4a68B',
+            title: 'Mr. Brightside — The Killers',
+          },
+          {
+            type: 'heading',
+            text: '6. Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'paragraph',
+            text: 'Cuatro golpes. Silencio. Cuatro golpes. Esa apertura icónica es una de las mejores intros de light show que puedes coreografiar. Cada power chord = explosión de luces, el silencio entre medias = máximo dramatismo.',
+          },
+          {
+            type: 'spotify',
+            trackId: '2KH16WveTQWT6KOG9Rg6e2',
+            title: 'Eye of the Tiger — Survivor',
+          },
+          {
+            type: 'heading',
+            text: "7. Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'paragraph',
+            text: 'Rápida, divertida y llena de energía a ~156 BPM. Las escalas de piano y el fraseo vocal crean acentos naturales perfectos para patrones de luces rápidos. Ideal para ambientes de fiesta.',
+          },
+          {
+            type: 'spotify',
+            trackId: '3lrNq7iGL5r3KS93YiKAbC',
+            title: "Don't Stop Me Now — Queen",
+          },
+          {
+            type: 'heading',
+            text: "8. Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'paragraph',
+            text: 'Ese riff de guitarra es uno de los más reconocibles del rock — perfecto para una secuencia de luces lenta que va construyendo nota a nota. El verso tranquilo da espacio para coreografía sutil antes del estallido del estribillo.',
+          },
+          {
+            type: 'spotify',
+            trackId: '7o2CTH4ctstm8TNelqjb51',
+            title: "Sweet Child O' Mine — Guns N' Roses",
+          },
+          {
+            type: 'heading',
+            text: '9. Levitating — Dua Lipa',
+          },
+          {
+            type: 'paragraph',
+            text: 'Pop moderno con estructura muy limpia. A 103 BPM es cómodo para coreografías detalladas. El beat de influencia disco ofrece anclas 4/4 sólidas, los elementos de sintetizador añaden puntos de acento juguetones.',
+          },
+          {
+            type: 'spotify',
+            trackId: '39LLxExYz6ewLAcYrzQQyP',
+            title: 'Levitating — Dua Lipa',
+          },
+          {
+            type: 'heading',
+            text: '10. Jingle Bell Rock — Bobby Helms (bonus: la elección estacional)',
+          },
+          {
+            type: 'paragraph',
+            text: 'Los Tesla light shows navideños son los más vistos en la comunidad. Ritmo simple, corta duración, atractivo universal. Párca fuera en Navidad y tendrás gente parándose a mirar.',
+          },
+          {
+            type: 'spotify',
+            trackId: '7vQbuQcyTflfCIOu3Uzzya',
+            title: 'Jingle Bell Rock — Bobby Helms',
+          },
+          {
+            type: 'heading',
+            text: '¿Listo para empezar?',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio te permite importar cualquier MP3 desde tu teléfono, visualizar la forma de onda en una timeline y colocar eventos de luz para los 21 elementos controlables de tu Tesla. O deja que la IA analice tu canción y genere un show completo en segundos.',
+          },
+          {
+            type: 'cta',
+            text: 'Crea tu Tesla Light Show ahora →',
+            href: '/#download',
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: 'tesla-light-show-not-working-troubleshooting',
+    date: '2026-04-10',
+    thumbnail: doesntWorkImg,
+    translations: {
+      en: {
+        title: 'Tesla Light Show Not Working — Complete Troubleshooting Guide',
+        description:
+          'Tesla Light Show not working? Here are all the reasons why and how to fix them — USB format, folder name, file mismatch, wrong port, software version and more.',
+        content: [
+          {
+            type: 'paragraph',
+            text: "You've got a .fseq file, a USB drive, and a Tesla — but the light show just won't launch. Or it plays but the lights are completely out of sync. Whatever the issue, you're not alone. Here's every reason why Tesla light shows break, and exactly how to fix each one.",
+          },
+          {
+            type: 'heading',
+            text: 'The show appears but won\'t play',
+          },
+          {
+            type: 'paragraph',
+            text: 'Your USB is recognized and "Custom Light Show" appears, but tapping play does nothing — or the show starts and immediately stops.',
+          },
+          {
+            type: 'list',
+            items: [
+              'The files must be named exactly "lightshow.fseq" and "lightshow.mp3" (or "lightshow.wav") — Tesla requires these exact names.',
+              'Tesla recommends .wav at 44.1 kHz for best compatibility. If your show has sync issues, try converting your audio to .wav.',
+              'Only one custom show is supported per USB drive. Remove any extra .fseq or audio files.',
+              'Check that the .fseq file is not corrupted. Re-export it from your creation tool and copy it again.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Tesla doesn\'t recognize the USB at all',
+          },
+          {
+            type: 'paragraph',
+            text: 'Nothing happens when you plug in the drive — no USB icon, no prompt. This is usually a hardware or port issue.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Make sure you\'re using a data-capable USB port. On Model 3 and Model Y (post-2021), the data port is inside the glovebox. The front console ports on these models are charge-only.',
+              'Try a different USB drive. Some drives are not recognized by Tesla\'s USB controller, especially drives with custom firmware or unusual formatting.',
+              'Try a USB-A to USB-C adapter or a USB hub if your drive has a USB-A connector and your car has USB-C ports.',
+              'Reboot the car by holding both scroll wheels until the screen goes black. Wait for it to restart fully, then reinsert the USB.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'The light show plays but lights are out of sync',
+          },
+          {
+            type: 'paragraph',
+            text: 'The show launches, the music plays, but the lights don\'t match the beat — they\'re early, late, or completely off.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Make sure the audio file matches the exact version used when creating the show. If you changed the MP3 after exporting the .fseq, the sync will be broken.',
+              'Use .wav instead of .mp3. MP3 files can have a small encoding delay that throws off timing. WAV files at 44.1 kHz have no such offset.',
+              'Some .fseq creation tools require a specific sample rate. Check the documentation for the tool you used to create the show.',
+              'If you created the show with LightShow Studio, re-export both the .fseq and audio from within the app — or contact our support if the issue persists.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Your Tesla software is too old',
+          },
+          {
+            type: 'paragraph',
+            text: 'Custom Tesla light shows require software version 2021.44.25 or later (sometimes referenced as v11.0). If your car is on an older version, the feature simply doesn\'t exist yet.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Go to Controls > Software and check your current version.',
+              'If an update is available, connect to Wi-Fi and install it.',
+              'Supported vehicles: Model S and Model X with 2021+ refresh hardware, Model 3 and Model Y (all versions), and Cybertruck.',
+              'Original Model S and Model X (pre-2021 refresh) do not support custom light shows regardless of software version.',
+            ],
+          },
+          {
+            type: 'cta',
+            text: 'Create your Tesla Light Show with LightShow Studio →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: 'The show worked before but stopped working',
+          },
+          {
+            type: 'paragraph',
+            text: "This happens. Sometimes a Tesla software update changes something, or the USB drive just needs a reset. Here\'s what to try.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Remove the USB drive, reboot the car (hold both scroll wheels), and reinsert the drive after the car has fully restarted.',
+              'Re-copy the files to the USB drive. Sometimes a file gets corrupted after repeated reads.',
+              'Reformat the USB drive completely (exFAT) and copy everything fresh.',
+              'Check if a recent Tesla software update changed USB port assignments. After major updates, try the other USB ports.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Quick checklist — run through this first',
+          },
+          {
+            type: 'list',
+            items: [
+              'USB formatted as exFAT or FAT32 (not NTFS)',
+              'Root folder named exactly "LightShow" (capital L and S)',
+              'No "TeslaCam" folder on the drive',
+              'Files named exactly "lightshow.fseq" and "lightshow.mp3" (or .wav)',
+              'Using a data-capable USB port (glovebox on Model 3/Y post-2021)',
+              'Tesla software v11.0 (2021.44.25) or newer',
+              'Car rebooted after inserting USB',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'The easiest way to avoid all of this',
+          },
+          {
+            type: 'paragraph',
+            text: 'If you\'re creating your own light shows, a lot of these problems come down to the export process — wrong file names, format mismatches, pairing issues. LightShow Studio handles all of that automatically. The app exports your .fseq and audio files with matching names, walks you through the USB transfer step by step, and tells you exactly which port to use on your car.',
+          },
+          {
+            type: 'paragraph',
+            text: 'No guessing, no manual file management. You create the show, tap export, follow the in-app guide, and it works.',
+          },
+          {
+            type: 'cta',
+            text: 'Try LightShow Studio for free →',
+            href: '/#download',
+          },
+        ],
+      },
+      fr: {
+        title: 'Tesla Light Show ne fonctionne pas — Guide de résolution complet',
+        description:
+          'Votre Tesla Light Show ne fonctionne pas ? Voici toutes les causes possibles et comment les corriger — format USB, nom du dossier, fichiers non appairés, mauvais port, version logicielle.',
+        content: [
+          {
+            type: 'paragraph',
+            text: "Vous avez un fichier .fseq, une clé USB et une Tesla — mais le light show refuse de se lancer. Ou encore le show se lance mais les lumières ne sont pas du tout synchronisées. Quelle que soit la situation, vous n'êtes pas seul. Voici toutes les raisons pour lesquelles les Tesla light shows plantent, et comment corriger chacune d'elles.",
+          },
+          {
+            type: 'heading',
+            text: 'Le show apparaît mais ne se lance pas',
+          },
+          {
+            type: 'paragraph',
+            text: "Votre clé est reconnue et \"Custom Light Show\" s'affiche, mais appuyer sur play ne fait rien — ou le show démarre et s'arrête immédiatement.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Les fichiers doivent s\'appeler exactement "lightshow.fseq" et "lightshow.mp3" (ou "lightshow.wav") — Tesla exige ces noms précis.',
+              'Tesla recommande le format .wav à 44,1 kHz pour une meilleure compatibilité. Si vous avez des problèmes de sync, convertissez votre audio en .wav.',
+              'Un seul show personnalisé par clé USB. Supprimez tout fichier .fseq ou audio supplémentaire.',
+              'Vérifiez que le fichier .fseq n\'est pas corrompu. Ré-exportez-le depuis votre outil de création et copiez-le à nouveau.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'La Tesla ne reconnaît pas du tout la clé USB',
+          },
+          {
+            type: 'paragraph',
+            text: "Rien ne se passe quand vous branchez la clé — pas d'icône USB, pas de popup. C'est généralement un problème de hardware ou de port.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Assurez-vous d\'utiliser un port USB data. Sur les Model 3 et Model Y (post-2021), le port data se trouve dans la boîte à gants. Les ports de la console avant sur ces modèles sont uniquement pour la charge.',
+              'Essayez une autre clé USB. Certaines clés ne sont pas reconnues par le contrôleur USB de Tesla, notamment les clés avec un firmware personnalisé.',
+              'Essayez un adaptateur USB-A vers USB-C ou un hub USB si votre clé a un connecteur USB-A et votre voiture des ports USB-C.',
+              'Redémarrez la voiture en maintenant les deux molettes jusqu\'à ce que l\'écran s\'éteigne. Attendez le redémarrage complet, puis rebranchez la clé.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Le light show se lance mais les lumières ne sont pas synchronisées',
+          },
+          {
+            type: 'paragraph',
+            text: "Le show se lance, la musique joue, mais les lumières ne suivent pas le rythme — elles sont en avance, en retard ou complètement à côté.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Assurez-vous que le fichier audio correspond exactement à la version utilisée lors de la création du show. Si vous avez modifié le MP3 après avoir exporté le .fseq, la synchronisation sera cassée.',
+              'Utilisez le format .wav plutôt que .mp3. Les fichiers MP3 peuvent avoir un léger délai d\'encodage qui décale le timing. Les fichiers WAV à 44,1 kHz n\'ont pas ce problème.',
+              'Certains outils de création de .fseq nécessitent un taux d\'échantillonnage spécifique. Consultez la documentation de l\'outil utilisé.',
+              'Si vous avez créé le show avec LightShow Studio, ré-exportez le .fseq et l\'audio depuis l\'app — ou contactez le support si le problème persiste.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'La version logicielle de votre Tesla est trop ancienne',
+          },
+          {
+            type: 'paragraph',
+            text: "Les Tesla light shows personnalisés nécessitent la version logicielle 2021.44.25 ou ultérieure (parfois référencée comme v11.0). Si votre voiture est sur une version plus ancienne, la fonctionnalité n'existe tout simplement pas encore.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Allez dans Contrôles > Logiciel et vérifiez votre version actuelle.',
+              'Si une mise à jour est disponible, connectez-vous au Wi-Fi et installez-la.',
+              'Véhicules compatibles : Model S et Model X avec hardware 2021+ refresh, Model 3 et Model Y (toutes versions), et Cybertruck.',
+              'Les Model S et Model X originaux (avant le refresh 2021) ne supportent pas les light shows personnalisés, quelle que soit la version logicielle.',
+            ],
+          },
+          {
+            type: 'cta',
+            text: 'Créez votre Tesla Light Show avec LightShow Studio →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: 'Le show fonctionnait avant mais a cessé de marcher',
+          },
+          {
+            type: 'paragraph',
+            text: "Ça arrive. Parfois une mise à jour Tesla change quelque chose, ou la clé USB a juste besoin d'être réinitialisée. Voici quoi essayer.",
+          },
+          {
+            type: 'list',
+            items: [
+              'Retirez la clé USB, redémarrez la voiture (maintenez les deux molettes), et rebranchez la clé après le redémarrage complet.',
+              'Recopiez les fichiers sur la clé USB. Un fichier peut se corrompre après des lectures répétées.',
+              'Reformatez complètement la clé (exFAT) et recopiez tout à neuf.',
+              'Vérifiez si une mise à jour Tesla récente a modifié l\'assignation des ports USB. Après une mise à jour majeure, essayez les autres ports.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Checklist rapide — commencez par là',
+          },
+          {
+            type: 'list',
+            items: [
+              'Clé USB formatée en exFAT ou FAT32 (pas NTFS)',
+              'Dossier racine nommé exactement "LightShow" (L et S majuscules)',
+              'Pas de dossier "TeslaCam" sur la clé',
+              'Fichiers nommés exactement "lightshow.fseq" et "lightshow.mp3" (ou .wav)',
+              'Port USB data utilisé (boîte à gants sur Model 3/Y post-2021)',
+              'Logiciel Tesla v11.0 (2021.44.25) ou plus récent',
+              'Voiture redémarrée après branchement de la clé',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'La façon la plus simple d\'éviter tout ça',
+          },
+          {
+            type: 'paragraph',
+            text: "Si vous créez vos propres light shows, beaucoup de ces problèmes viennent du processus d'export — mauvais noms de fichiers, incompatibilités de format, erreurs d'appairage. LightShow Studio gère tout ça automatiquement. L'app exporte votre .fseq et votre fichier audio avec des noms correspondants, vous guide étape par étape pour le transfert USB, et vous indique exactement quel port utiliser sur votre voiture.",
+          },
+          {
+            type: 'paragraph',
+            text: "Pas de devinettes, pas de gestion manuelle de fichiers. Vous créez le show, vous touchez exporter, vous suivez le guide intégré, et ça marche.",
+          },
+          {
+            type: 'cta',
+            text: 'Essayez LightShow Studio gratuitement →',
+            href: '/#download',
+          },
+        ],
+      },
+      de: {
+        title: 'Tesla Light Show funktioniert nicht — Vollständige Fehlerbehebung',
+        description:
+          'Tesla Light Show funktioniert nicht? Hier sind alle möglichen Ursachen und wie Sie sie beheben — USB-Format, Ordnername, Datei-Mismatch, falscher Port, Software-Version.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Sie haben eine .fseq-Datei, einen USB-Stick und einen Tesla — aber die Light Show startet einfach nicht. Hier sind alle Gründe, warum Tesla Light Shows nicht funktionieren, und wie Sie jedes Problem beheben.',
+          },
+          {
+            type: 'heading',
+            text: 'Die Show erscheint, startet aber nicht',
+          },
+          {
+            type: 'list',
+            items: [
+              'Die Dateien müssen exakt "lightshow.fseq" und "lightshow.mp3" (oder "lightshow.wav") heißen — Tesla erfordert diese genauen Namen.',
+              'Tesla empfiehlt .wav mit 44,1 kHz für beste Kompatibilität.',
+              'Prüfen Sie, ob die .fseq-Datei nicht beschädigt ist — exportieren Sie sie neu.',
+              'Nur eine Custom Show pro USB-Stick. Entfernen Sie alle weiteren .fseq- oder Audiodateien.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Tesla erkennt den USB-Stick gar nicht',
+          },
+          {
+            type: 'list',
+            items: [
+              'Verwenden Sie einen Daten-USB-Port. Bei Model 3 und Model Y (ab 2021) befindet sich dieser im Handschuhfach.',
+              'Probieren Sie einen anderen USB-Stick.',
+              'Starten Sie das Fahrzeug neu (beide Scrollräder gedrückt halten) und stecken Sie den Stick danach ein.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Die Show spielt, aber Lichter sind nicht synchron',
+          },
+          {
+            type: 'list',
+            items: [
+              'Die Audiodatei muss exakt die Version sein, die beim Erstellen der Show verwendet wurde.',
+              'Verwenden Sie .wav statt .mp3 — MP3 kann einen kleinen Encoding-Delay haben.',
+              'Bei Erstellung mit LightShow Studio: .fseq und Audio neu aus der App exportieren — oder den Support kontaktieren, wenn das Problem weiterhin besteht.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Die Tesla-Software ist zu alt',
+          },
+          {
+            type: 'list',
+            items: [
+              'Custom Light Shows erfordern Software v11.0 (2021.44.25) oder neuer.',
+              'Gehen Sie zu Steuerung > Software und prüfen Sie Ihre Version.',
+              'Unterstützte Fahrzeuge: Model S/X (2021+ Refresh), Model 3, Model Y, Cybertruck.',
+              'Original Model S/X (vor 2021 Refresh) unterstützt keine Custom Shows.',
+            ],
+          },
+          {
+            type: 'cta',
+            text: 'Tesla Light Show mit LightShow Studio erstellen →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: 'Schnell-Checkliste',
+          },
+          {
+            type: 'list',
+            items: [
+              'USB als exFAT oder FAT32 formatiert (nicht NTFS)',
+              'Ordner heißt genau "LightShow" (Groß-/Kleinschreibung)',
+              'Kein "TeslaCam"-Ordner auf dem Stick',
+              'Dateien heißen exakt "lightshow.fseq" und "lightshow.mp3" (oder .wav)',
+              'Daten-USB-Port verwendet (Handschuhfach bei Model 3/Y ab 2021)',
+              'Tesla-Software v11.0 oder neuer',
+              'Fahrzeug nach USB-Einsetzen neu gestartet',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Der einfachste Weg, das alles zu vermeiden',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio verwaltet den gesamten Export automatisch — passende Dateinamen, korrektes Format, Schritt-für-Schritt-Anleitung für den USB-Transfer. Kein Rätselraten.',
+          },
+          {
+            type: 'cta',
+            text: 'LightShow Studio kostenlos testen →',
+            href: '/#download',
+          },
+        ],
+      },
+      es: {
+        title: 'Tesla Light Show no funciona — Guía completa de solución de problemas',
+        description:
+          '¿Tu Tesla Light Show no funciona? Aquí están todas las causas posibles y cómo solucionarlas — formato USB, nombre de carpeta, archivos no emparejados, puerto incorrecto.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Tienes un archivo .fseq, una memoria USB y un Tesla — pero el light show simplemente no arranca. Aquí están todas las razones por las que los Tesla light shows fallan, y cómo solucionar cada una.',
+          },
+          {
+            type: 'heading',
+            text: 'El show aparece pero no arranca',
+          },
+          {
+            type: 'list',
+            items: [
+              'Los archivos deben llamarse exactamente "lightshow.fseq" y "lightshow.mp3" (o "lightshow.wav") — Tesla requiere estos nombres exactos.',
+              'Tesla recomienda .wav a 44,1 kHz para mejor compatibilidad.',
+              'Solo un show personalizado por memoria USB. Elimina cualquier archivo .fseq o audio extra.',
+              'Comprueba que el archivo .fseq no está corrupto — reexportarlo.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Tesla no reconoce la memoria USB',
+          },
+          {
+            type: 'list',
+            items: [
+              'Usa un puerto USB de datos. En el Model 3 y Model Y (post-2021), el puerto de datos está en la guantera.',
+              'Prueba con otra memoria USB.',
+              'Reinicia el coche (mantén ambas ruedas de desplazamiento) y vuelve a conectar la memoria.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'El show arranca pero las luces no están sincronizadas',
+          },
+          {
+            type: 'list',
+            items: [
+              'El archivo de audio debe ser exactamente la misma versión usada al crear el show.',
+              'Usa .wav en lugar de .mp3 — el MP3 puede tener un pequeño delay de codificación.',
+              'Si creaste el show con LightShow Studio, vuelve a exportar .fseq y audio desde la app — o contacta el soporte si el problema persiste.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'El software de tu Tesla es demasiado antiguo',
+          },
+          {
+            type: 'list',
+            items: [
+              'Los light shows personalizados requieren software v11.0 (2021.44.25) o posterior.',
+              'Ve a Controles > Software y comprueba tu versión.',
+              'Vehículos compatibles: Model S/X (refresh 2021+), Model 3, Model Y, Cybertruck.',
+              'El Model S/X original (antes del refresh 2021) no admite shows personalizados.',
+            ],
+          },
+          {
+            type: 'cta',
+            text: 'Crea tu Tesla Light Show con LightShow Studio →',
+            href: '/#download',
+          },
+          {
+            type: 'heading',
+            text: 'Lista de verificación rápida',
+          },
+          {
+            type: 'list',
+            items: [
+              'USB formateado como exFAT o FAT32 (no NTFS)',
+              'Carpeta llamada exactamente "LightShow" (mayúsculas)',
+              'Sin carpeta "TeslaCam" en la memoria',
+              'Archivos llamados exactamente "lightshow.fseq" y "lightshow.mp3" (o .wav)',
+              'Puerto USB de datos usado (guantera en Model 3/Y post-2021)',
+              'Software Tesla v11.0 o posterior',
+              'Coche reiniciado tras insertar la memoria',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'La forma más fácil de evitar todo esto',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio gestiona todo el proceso de exportación automáticamente — nombres de archivo correctos, formato adecuado, guía paso a paso para la transferencia USB. Sin adivinanzas.',
+          },
+          {
+            type: 'cta',
+            text: 'Prueba LightShow Studio gratis →',
             href: '/#download',
           },
         ],

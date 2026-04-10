@@ -31,7 +31,7 @@ export default function BlogList() {
 
         {/* Articles */}
         <div className="space-y-8">
-          {articles.map((article, i) => {
+          {[...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((article, i) => {
             const tr = getArticleTranslation(article, i18n.language)
             return (
               <motion.article

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SUPPORTED_LANGS, getDictionary, t, isLang } from '@/i18n/dictionaries'
 import BlogList from '@/components/blog/BlogList'
+import ChatWidget from '@/components/ChatWidget'
 
 const BASE = 'https://lightshowstud.io'
 
@@ -46,5 +47,10 @@ export async function generateMetadata({
 }
 
 export default function Page() {
-  return <BlogList />
+  return (
+    <>
+      <BlogList />
+      <ChatWidget />
+    </>
+  )
 }

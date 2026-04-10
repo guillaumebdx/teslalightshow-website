@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SUPPORTED_LANGS, getDictionary, isLang } from '@/i18n/dictionaries'
 import { articles, getArticle, getArticleTranslation } from '@/data/blog-articles'
 import BlogArticlePage from '@/components/blog/BlogArticle'
+import ChatWidget from '@/components/ChatWidget'
 
 const BASE = 'https://lightshowstud.io'
 
@@ -100,6 +101,7 @@ export default async function Page({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <BlogArticlePage />
+      <ChatWidget />
     </>
   )
 }

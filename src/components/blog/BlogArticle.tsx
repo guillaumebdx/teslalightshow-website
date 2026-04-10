@@ -74,6 +74,19 @@ function ContentBlock({ block, localePath }: { block: BlockType; localePath: (p:
           />
         </div>
       )
+    case 'spotify':
+      return (
+        <div className="my-2 overflow-hidden rounded-xl border border-border-light shadow-lg">
+          <iframe
+            src={`https://open.spotify.com/embed/track/${block.trackId}?utm_source=generator&theme=0`}
+            title={block.title}
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="w-full"
+            height="80"
+          />
+        </div>
+      )
     default:
       return null
   }
