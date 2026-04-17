@@ -5,6 +5,8 @@ import glovebox from '@/assets/blog/boite-a-gant.jpg'
 import exportScreen from '@/assets/blog/export.png'
 import bestSongsImg from '@/assets/blog/lightshow_best_songs.png'
 import doesntWorkImg from '@/assets/blog/lightshow_doesnt_work.png'
+import fseqImg from '@/assets/blog/tesla_fseq.png'
+import aiLightshowImg from '@/assets/blog/ai_tesla_lightshow.png'
 
 // --------------- Types ---------------
 type ImageSrc = string | { src: string; height?: number; width?: number }
@@ -2774,6 +2776,704 @@ export const articles: BlogArticle[] = [
           {
             type: 'cta',
             text: 'Crea tu Tesla Light Show ahora \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: 'fseq-file-format-explained',
+    date: '2026-04-15',
+    thumbnail: fseqImg,
+    translations: {
+      en: {
+        title: 'The .fseq File Format Explained — How Tesla Light Shows Actually Work',
+        description:
+          'The .fseq file is the heart of every Tesla light show. Here\'s what\'s inside, where the format came from (spoiler: not Tesla), and why it matters when you build your own show.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Every Tesla light show you\'ve ever seen lives inside a single .fseq file. Open one in a text editor and you\'ll get nothing but gibberish — it\'s a binary format, designed to pack thousands of timed light events into a few hundred kilobytes. Here\'s what actually lives inside, where the format came from, and why Tesla picked it instead of inventing their own.',
+          },
+          {
+            type: 'image',
+            src: fseqImg,
+            alt: 'Tesla .fseq file format diagram',
+            caption: 'The .fseq file is the beating heart of every custom Tesla light show',
+          },
+          {
+            type: 'heading',
+            text: 'Tesla didn\'t invent .fseq — Christmas did',
+          },
+          {
+            type: 'paragraph',
+            text: 'The .fseq format was created years before custom Tesla light shows existed. It comes from the holiday lighting community — the kind of people who wire thousands of RGB LEDs to their house for Christmas and synchronize the whole thing to music. The format was designed by the xLights project and is widely used with controllers like Falcon Player (FPP), which drives those massive suburban light displays you see every December.',
+          },
+          {
+            type: 'paragraph',
+            text: 'When Tesla launched custom light shows in late 2021 with software update 2021.44.25, they made a smart choice: instead of inventing yet another proprietary file format, they piggybacked on .fseq. The format already had mature tooling, an active community, and proven reliability on much larger systems. Your Tesla just happens to be a very small "RGB display" with very specific channels.',
+          },
+          {
+            type: 'heading',
+            text: 'What\'s actually inside a .fseq file',
+          },
+          {
+            type: 'paragraph',
+            text: 'A .fseq file is essentially a table. Time goes down the rows, and each column is a "channel" — a single addressable light or motor. Every 20 milliseconds (50 frames per second — Tesla\'s recommended step time), the file tells Tesla: "for this frame, channel 1 should be at value 255, channel 2 at value 0, channel 5 at value 128…" and so on across all channels.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Header: version, frame count, step time (20 ms recommended, 15–100 ms supported), total channel count, compression info.',
+              'Channel map: which channel controls what (headlight left, turn signal right, window, mirror, trunk, charge port…).',
+              'Frame data: one row of channel values per 20 ms of show (at the recommended step time).',
+              'Optional compression: zstd is commonly used to keep files small.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            text: 'For a 3-minute show at 50 fps, that\'s 9,000 frames. With roughly 48 channels on a Model 3 or Model Y, you end up with a table of about 432,000 values describing the entire show — all packed into a binary file typically under a megabyte thanks to zstd compression.',
+          },
+          {
+            type: 'heading',
+            text: 'How Tesla plays it',
+          },
+          {
+            type: 'paragraph',
+            text: 'When you plug a USB with a valid LightShow folder into your Tesla and trigger the custom show, the car\'s software reads the .fseq file frame by frame. Each frame lasts 20 ms (at the recommended step time). For each frame, the car dispatches the channel values to the corresponding hardware — headlights dim to a specific brightness, turn signals blink on or off, windows roll down, mirrors fold, trunk opens.',
+          },
+          {
+            type: 'paragraph',
+            text: 'The audio file (lightshow.mp3 or lightshow.wav) plays in parallel, started at the same moment as the .fseq. There\'s no embedded sync or timecode — both tracks are simply started together and trusted to stay aligned. That\'s why using .wav at 44.1 kHz is more reliable than MP3: MP3 files can have a tiny encoding delay that shifts the audio a few milliseconds behind the lights.',
+          },
+          {
+            type: 'heading',
+            text: 'The Tesla channel map',
+          },
+          {
+            type: 'paragraph',
+            text: 'Not every channel controls a colored LED. Most of them are binary toggles (window open/closed, mirror folded/unfolded, trunk open/closed). A handful of channels are PWM-capable — typically the headlights and fog lights — meaning they can fade smoothly from 0 (off) to 255 (full brightness). On a Model 3 or Model Y, you get roughly 48 addressable channels split across front lights, rear lights, turn signals, fog lights, reverse lights, mirrors, windows, trunk, and charge port door.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Cybertruck and the refreshed Model S and Model X have different channel counts and layouts. That\'s why a show built for a Model Y won\'t always look right on a Model S — the file might be valid, but the channels map to different things.',
+          },
+          {
+            type: 'heading',
+            text: 'Why this matters when you create a show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Every timeline editor, every AI generator, every web tool that lets you build a Tesla light show ultimately outputs the same thing: a table of channel values over time, saved as a .fseq file. The difference between tools is how they let you build that table — some give you a millisecond-precise visual timeline, some generate it from an audio file, some let you edit each channel by hand.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Knowing what\'s under the hood helps when something doesn\'t work. Lights out of sync? Probably an audio encoding offset. Wrong lights firing? Check the channel map. Show won\'t play? The .fseq header or frame rate is likely off. The format is simple enough that most issues come back to these few fundamentals.',
+          },
+          {
+            type: 'cta',
+            text: 'Create your own .fseq show with LightShow Studio \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      fr: {
+        title: 'Le format .fseq expliqué — comment fonctionne vraiment un Tesla Light Show',
+        description:
+          'Le fichier .fseq est le cœur de tout Tesla Light Show. Voici ce qu\u2019il y a dedans, d\u2019où vient le format (spoiler\u00a0: pas de Tesla), et pourquoi c\u2019est utile à savoir quand tu crées ton propre show.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Chaque Tesla Light Show que tu as vu tourner tient dans un unique fichier .fseq. Ouvre-le dans un éditeur de texte\u00a0: c\u2019est du charabia. Normal, c\u2019est un format binaire, conçu pour faire tenir des milliers d\u2019évènements lumineux synchronisés dans quelques centaines de kilo-octets. Voici ce qu\u2019il y a vraiment dedans, d\u2019où vient le format, et pourquoi Tesla ne l\u2019a pas inventé.',
+          },
+          {
+            type: 'image',
+            src: fseqImg,
+            alt: 'Format de fichier Tesla .fseq',
+            caption: 'Le .fseq est le cœur de tout Tesla Light Show personnalisé',
+          },
+          {
+            type: 'heading',
+            text: 'Tesla n\u2019a pas inventé le .fseq — Noël l\u2019a fait avant eux',
+          },
+          {
+            type: 'paragraph',
+            text: 'Le format .fseq existait bien avant les light shows Tesla. Il vient du monde des illuminations de fête — ces gens qui câblent des milliers de LED RGB sur leur maison pour Noël et synchronisent le tout sur de la musique. Le format a été créé par le projet xLights et il est massivement utilisé avec des contrôleurs comme Falcon Player (FPP), qui pilote les grosses installations lumineuses que tu vois défiler chaque décembre sur les réseaux.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Quand Tesla a lancé les light shows personnalisés fin 2021 (mise à jour 2021.44.25), ils ont fait un choix malin\u00a0: plutôt que d\u2019inventer un énième format propriétaire, ils se sont greffés sur .fseq. Le format avait déjà des outils matures, une communauté active, et une fiabilité prouvée sur des systèmes bien plus gros. Ta Tesla est juste un petit afficheur lumineux avec des canaux très spécifiques.',
+          },
+          {
+            type: 'heading',
+            text: 'Ce qu\u2019il y a vraiment dans un .fseq',
+          },
+          {
+            type: 'paragraph',
+            text: 'Un fichier .fseq, c\u2019est essentiellement un tableau. Le temps descend en lignes, chaque colonne est un « canal » — une lumière ou un moteur adressable. Toutes les 20 millisecondes (50 images par seconde — la valeur recommandée par Tesla), le fichier dit à la Tesla\u00a0: «\u00a0pour cette image, le canal 1 doit être à 255, le canal 2 à 0, le canal 5 à 128…\u00a0» et ainsi de suite pour tous les canaux.',
+          },
+          {
+            type: 'list',
+            items: [
+              'En-tête\u00a0: version, nombre d\u2019images, pas de temps (20 ms recommandé, 15–100 ms supporté), nombre total de canaux, info de compression.',
+              'Mapping des canaux\u00a0: qui contrôle quoi (phare gauche, clignotant droit, vitre, rétroviseur, coffre, trappe de charge…).',
+              'Données d\u2019images\u00a0: une ligne de valeurs de canaux par tranche de 20 ms (au pas de temps recommandé).',
+              'Compression optionnelle\u00a0: zstd est utilisé le plus souvent pour garder les fichiers compacts.',
+            ],
+          },
+          {
+            type: 'paragraph',
+            text: 'Pour un show de 3 minutes à 50 fps, ça fait 9\u00a0000 images. Avec environ 48 canaux sur une Model 3 ou Model Y, tu te retrouves avec un tableau d\u2019à peu près 432\u00a0000 valeurs qui décrivent l\u2019intégralité du show — le tout empaqueté dans un fichier binaire généralement sous le mégaoctet grâce à la compression zstd.',
+          },
+          {
+            type: 'heading',
+            text: 'Comment la Tesla lit tout ça',
+          },
+          {
+            type: 'paragraph',
+            text: 'Quand tu branches une clé USB avec un dossier LightShow valide et que tu déclenches le show personnalisé, le logiciel de la voiture lit le fichier .fseq image par image. Chaque image dure 20 ms (au pas de temps recommandé). À chaque image, la voiture envoie les valeurs de chaque canal au matériel correspondant\u00a0: les phares se tamisent à une intensité précise, les clignotants s\u2019allument ou s\u2019éteignent, les vitres descendent, les rétros se replient, le coffre s\u2019ouvre.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Le fichier audio (lightshow.mp3 ou lightshow.wav) est lancé en parallèle, au même instant que le .fseq. Il n\u2019y a aucun timecode ni synchro embarquée — les deux pistes sont juste démarrées en même temps et on compte sur le fait qu\u2019elles restent alignées. C\u2019est pour ça que le .wav 44,1 kHz est plus fiable que le MP3\u00a0: le MP3 introduit un minuscule délai d\u2019encodage qui peut décaler l\u2019audio de quelques millisecondes derrière les lumières.',
+          },
+          {
+            type: 'heading',
+            text: 'Le mapping des canaux Tesla',
+          },
+          {
+            type: 'paragraph',
+            text: 'Tous les canaux ne pilotent pas une LED couleur. La plupart sont des interrupteurs binaires (vitre ouverte/fermée, rétro plié/déplié, coffre ouvert/fermé). Une poignée de canaux sont PWM — typiquement les phares et les antibrouillards — ce qui veut dire qu\u2019ils peuvent fondre de 0 (éteint) à 255 (luminosité max). Sur Model 3 ou Model Y, tu as environ 48 canaux adressables répartis entre feux avant, feux arrière, clignotants, antibrouillards, feux de recul, rétros, vitres, coffre et trappe de charge.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Le Cybertruck et les Model S/X refresh ont des mappings différents. C\u2019est pour ça qu\u2019un show conçu pour une Model Y ne tourne pas toujours bien sur une Model S — le fichier peut être valide, mais les canaux pointent vers autre chose.',
+          },
+          {
+            type: 'heading',
+            text: 'Pourquoi c\u2019est utile à savoir quand tu crées un show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Tous les éditeurs de timeline, tous les générateurs IA, tous les outils web qui permettent de faire un Tesla Light Show produisent au final la même chose\u00a0: un tableau de valeurs de canaux dans le temps, sauvegardé en .fseq. La différence entre les outils, c\u2019est la manière dont tu construis ce tableau — certains t\u2019offrent une timeline visuelle à la milliseconde, d\u2019autres le génèrent depuis un fichier audio, d\u2019autres te laissent éditer chaque canal à la main.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Savoir ce qu\u2019il y a sous le capot, ça aide quand un truc ne marche pas. Lumières désynchronisées\u00a0? Probablement un décalage d\u2019encodage audio. Mauvaises lumières qui s\u2019allument\u00a0? Vérifie le mapping des canaux. Le show ne démarre pas\u00a0? L\u2019en-tête ou la fréquence du .fseq est sans doute mauvaise. Le format est assez simple pour que la plupart des problèmes viennent toujours de ces quelques fondamentaux.',
+          },
+          {
+            type: 'cta',
+            text: 'Crée ton propre .fseq avec LightShow Studio \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      de: {
+        title: 'Das .fseq-Dateiformat erklärt — Wie ein Tesla Light Show wirklich funktioniert',
+        description:
+          'Die .fseq-Datei ist das Herzstück jedes Tesla Light Shows. Hier erfahren Sie, was darin steckt, woher das Format kommt (Spoiler: nicht von Tesla) und warum das wichtig ist.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Jeder Tesla Light Show steckt in einer einzigen .fseq-Datei. Öffnet man sie in einem Texteditor, sieht man nur Kauderwelsch — es ist ein Binärformat, das Tausende von getakteten Lichtereignissen in wenige hundert Kilobytes packt. Hier erfahren Sie, was wirklich darin steckt, woher das Format stammt und warum Tesla es übernommen hat, statt ein eigenes zu erfinden.',
+          },
+          {
+            type: 'image',
+            src: fseqImg,
+            alt: 'Tesla .fseq Dateiformat',
+            caption: 'Die .fseq-Datei ist das Herzstück jedes individuellen Tesla Light Shows',
+          },
+          {
+            type: 'heading',
+            text: 'Tesla hat .fseq nicht erfunden — die Weihnachtsbeleuchtungs-Community war zuerst da',
+          },
+          {
+            type: 'paragraph',
+            text: 'Das .fseq-Format existierte Jahre bevor Tesla individuelle Light Shows einführte. Es stammt aus der Weihnachtsbeleuchtungs-Welt — Leute, die Tausende RGB-LEDs an ihrem Haus installieren und synchron zur Musik laufen lassen. Das Format wurde vom xLights-Projekt entworfen und wird mit Controllern wie Falcon Player (FPP) verwendet, die die großen Lichtinstallationen steuern, die man jeden Dezember sieht.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Als Tesla Ende 2021 mit Software 2021.44.25 individuelle Light Shows einführte, wählten sie klug: statt ein neues proprietäres Format zu erfinden, übernahmen sie .fseq. Das Format hatte bereits ausgereifte Tools, eine aktive Community und bewährte Zuverlässigkeit auf viel größeren Systemen.',
+          },
+          {
+            type: 'heading',
+            text: 'Was wirklich in einer .fseq-Datei steckt',
+          },
+          {
+            type: 'paragraph',
+            text: 'Eine .fseq-Datei ist im Wesentlichen eine Tabelle. Die Zeit läuft in Zeilen nach unten, jede Spalte ist ein „Kanal" — ein adressierbares Licht oder Motor. Alle 20 Millisekunden (50 Bilder pro Sekunde — von Tesla empfohlen) sagt die Datei dem Tesla: „für dieses Bild Kanal 1 auf 255, Kanal 2 auf 0, Kanal 5 auf 128…" und so weiter für alle Kanäle.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Header: Version, Bildanzahl, Step-Time (20 ms empfohlen, 15–100 ms unterstützt), Gesamtzahl Kanäle, Komprimierungsinfo.',
+              'Kanal-Mapping: welcher Kanal steuert was (Scheinwerfer, Blinker, Fenster, Spiegel, Kofferraum, Ladeklappe…).',
+              'Bilddaten: eine Zeile Kanalwerte pro 20 ms (bei empfohlener Step-Time).',
+              'Optionale Komprimierung (zstd), um Dateien klein zu halten.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Wie Tesla sie abspielt',
+          },
+          {
+            type: 'paragraph',
+            text: 'Wenn Sie einen USB-Stick mit gültigem LightShow-Ordner einstecken und den Show starten, liest die Software die .fseq-Datei Bild für Bild. Jedes Bild dauert 20 ms (bei empfohlener Step-Time). Die Audiodatei (lightshow.mp3 oder .wav) läuft parallel — ohne eingebetteten Timecode. Deshalb ist .wav bei 44,1 kHz zuverlässiger als MP3: MP3 kann eine winzige Encoding-Verzögerung einführen, die das Audio einige Millisekunden hinter die Lichter verschiebt.',
+          },
+          {
+            type: 'heading',
+            text: 'Die Tesla Kanal-Map',
+          },
+          {
+            type: 'paragraph',
+            text: 'Nicht jeder Kanal steuert eine LED. Die meisten sind binäre Schalter (Fenster auf/zu, Spiegel ein/ausgeklappt, Kofferraum auf/zu). Eine Handvoll Kanäle ist PWM-fähig — typischerweise Scheinwerfer und Nebelscheinwerfer — sie können weich von 0 (aus) auf 255 (volle Helligkeit) faden. Bei Model 3 und Y gibt es etwa 48 adressierbare Kanäle.',
+          },
+          {
+            type: 'heading',
+            text: 'Warum das wichtig ist, wenn Sie einen Show erstellen',
+          },
+          {
+            type: 'paragraph',
+            text: 'Jeder Timeline-Editor, jeder KI-Generator produziert letztlich dasselbe: eine Tabelle von Kanalwerten über die Zeit, gespeichert als .fseq. Der Unterschied zwischen Tools liegt darin, wie Sie diese Tabelle aufbauen — millisekundengenaue Timeline, KI-Generierung aus Audio oder manuelle Kanal-Bearbeitung.',
+          },
+          {
+            type: 'cta',
+            text: 'Erstellen Sie Ihr eigenes .fseq mit LightShow Studio \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      es: {
+        title: 'El formato .fseq explicado — cómo funciona realmente un Tesla Light Show',
+        description:
+          'El archivo .fseq es el corazón de cualquier Tesla Light Show. Aquí tienes qué hay dentro, de dónde viene el formato (spoiler: no de Tesla) y por qué importa al crear tu propio show.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Cada Tesla Light Show que has visto cabe en un único archivo .fseq. Ábrelo en un editor de texto y solo verás caracteres ilegibles — es un formato binario, diseñado para comprimir miles de eventos luminosos sincronizados en unos pocos cientos de kilobytes. Esto es lo que hay realmente dentro, de dónde viene el formato y por qué Tesla no lo inventó.',
+          },
+          {
+            type: 'image',
+            src: fseqImg,
+            alt: 'Formato de archivo Tesla .fseq',
+            caption: 'El archivo .fseq es el corazón de cualquier Tesla Light Show personalizado',
+          },
+          {
+            type: 'heading',
+            text: 'Tesla no inventó .fseq — lo hizo la comunidad de iluminación navideña',
+          },
+          {
+            type: 'paragraph',
+            text: 'El formato .fseq existía años antes de los Tesla Light Shows. Viene del mundo de la iluminación navideña — gente que conecta miles de LEDs RGB en su casa y los sincroniza con música. El formato fue diseñado por el proyecto xLights y se usa masivamente con controladores como Falcon Player (FPP), que mueve las grandes instalaciones lumínicas que ves cada diciembre.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Cuando Tesla lanzó los light shows personalizados a finales de 2021 (actualización 2021.44.25), tomó una decisión inteligente: en lugar de inventar otro formato propietario, aprovechó .fseq. El formato ya tenía herramientas maduras, una comunidad activa y fiabilidad probada en sistemas mucho mayores.',
+          },
+          {
+            type: 'heading',
+            text: 'Qué hay realmente dentro de un .fseq',
+          },
+          {
+            type: 'paragraph',
+            text: 'Un archivo .fseq es esencialmente una tabla. El tiempo baja por las filas, cada columna es un "canal" — una luz o motor direccionable. Cada 20 milisegundos (50 fotogramas por segundo — valor recomendado por Tesla), el archivo le dice al Tesla: "para este fotograma, canal 1 a 255, canal 2 a 0, canal 5 a 128…" y así para todos los canales.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Cabecera: versión, número de fotogramas, paso de tiempo (20 ms recomendado, 15–100 ms soportado), canales totales, info de compresión.',
+              'Mapeo de canales: qué canal controla qué (faro, intermitente, ventana, espejo, maletero, puerto de carga…).',
+              'Datos de fotogramas: una fila de valores de canal por cada 20 ms (al paso recomendado).',
+              'Compresión opcional (zstd) para mantener los archivos compactos.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Cómo el Tesla lo reproduce',
+          },
+          {
+            type: 'paragraph',
+            text: 'Cuando conectas un USB con una carpeta LightShow válida y lanzas el show personalizado, el software del coche lee el .fseq fotograma a fotograma. El archivo de audio (lightshow.mp3 o .wav) se reproduce en paralelo, sin timecode embebido. Por eso el .wav a 44,1 kHz es más fiable que el MP3: el MP3 puede introducir un pequeño retraso de codificación que desfasa el audio unos milisegundos respecto a las luces.',
+          },
+          {
+            type: 'heading',
+            text: 'El mapeo de canales Tesla',
+          },
+          {
+            type: 'paragraph',
+            text: 'No todos los canales controlan un LED. La mayoría son interruptores binarios (ventana abierta/cerrada, espejo plegado/desplegado, maletero abierto/cerrado). Unos pocos son PWM — típicamente faros y antinieblas — y pueden atenuarse de 0 (apagado) a 255 (máxima intensidad). En Model 3 y Model Y hay unos 48 canales direccionables.',
+          },
+          {
+            type: 'heading',
+            text: 'Por qué importa cuando creas un show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Todo editor de timeline, todo generador con IA, toda herramienta web produce al final lo mismo: una tabla de valores de canal a lo largo del tiempo, guardada como .fseq. La diferencia entre herramientas es cómo te permiten construir esa tabla — timeline visual a la milisegundo, generación desde audio, o edición canal por canal.',
+          },
+          {
+            type: 'cta',
+            text: 'Crea tu propio .fseq con LightShow Studio \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+    },
+  },
+  {
+    slug: 'create-tesla-light-show-with-ai',
+    date: '2026-04-16',
+    thumbnail: aiLightshowImg,
+    translations: {
+      en: {
+        title: 'Creating a Tesla Light Show with AI — Complete Guide',
+        description:
+          'How to actually use AI to generate a Tesla light show in 2026: general-purpose LLMs like Claude, dedicated audio generators, and apps with built-in AI. With a working example prompt.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Building a Tesla light show by hand takes hours. You sit with a timeline, drop events on every beat, fine-tune the timing, re-export, test. It\'s rewarding — but also slow. For a first draft, for a quick show, or when you just want something to play on a road trip, AI can do most of the heavy lifting. Here\'s a practical look at how to actually use AI to generate a Tesla light show in 2026.',
+          },
+          {
+            type: 'image',
+            src: aiLightshowImg,
+            alt: 'AI-generated Tesla Light Show',
+            caption: 'AI can take you from audio file to playable .fseq in minutes',
+          },
+          {
+            type: 'heading',
+            text: 'Three real ways to use AI for a Tesla light show',
+          },
+          {
+            type: 'paragraph',
+            text: 'When people talk about "AI Tesla light shows" they usually mix up three very different approaches. Each has its own trade-offs.',
+          },
+          {
+            type: 'list',
+            items: [
+              'General-purpose LLMs (Claude, GPT, Gemini): you describe what you want, the model outputs a sequence file you then convert to .fseq.',
+              'Dedicated online generators (TLGEN is one example): upload an MP3, the tool analyses the audio and produces a .fseq directly.',
+              'Creation apps with AI built in (like LightShow Studio): you generate inside the same tool where you can then edit, refine and export.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Using Claude or ChatGPT to generate a show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Modern LLMs can absolutely produce a usable light show file. The trick is that they don\'t generate binary .fseq directly — they\'re much better at producing xLights sequence files (.xsq, which is XML), which you then open in xLights and export as .fseq. Treat the LLM as a sequence writer, not a file encoder.',
+          },
+          {
+            type: 'paragraph',
+            text: 'The quality of the output depends almost entirely on the prompt. A vague prompt gives you a vague, boring show. A detailed prompt — with the song structure, the BPM, the Tesla channel map, and the style you want — gives you something worth opening.',
+          },
+          {
+            type: 'heading',
+            text: 'Example prompt that actually works',
+          },
+          {
+            type: 'paragraph',
+            text: 'Here\'s a prompt template you can adapt. It gives the model enough structure to produce something coherent rather than a random pattern:',
+          },
+          {
+            type: 'paragraph',
+            text: '"Generate an xLights sequence (.xsq) for a Tesla Model Y light show. Song: Thunderstruck by AC/DC — 4:52, 133 BPM. Sequence at 50 fps (20 ms frames, Tesla recommended step time). Use 48 channels, where channels 1-8 are headlights and fog lights (PWM, 0-255), 9-16 are turn signals (binary), 17-24 are rear lights and brake, 25-32 are mirrors and windows, 33-48 are auxiliary (charge port, trunk). Structure: intro 0:00-0:27 — pulse headlights on the guitar riff, alternating left/right. First verse 0:27-1:02 — subtle fades, turn signals on the snare. Chorus 1:02-1:32 — full-power bursts, all lights on downbeats, windows roll down on the word thunder. Keep transitions on beat. Output the full .xsq XML."',
+          },
+          {
+            type: 'paragraph',
+            text: 'What makes this prompt work: the song reference, the BPM, the explicit channel map, the frame rate, and a time-stamped structure. The model doesn\'t need to guess. You\'ll still want to open the result in xLights, check the timing against the waveform, and tweak — but you\'ll be starting from a real first draft, not a blank sequence.',
+          },
+          {
+            type: 'heading',
+            text: 'The limits of LLM-generated shows',
+          },
+          {
+            type: 'paragraph',
+            text: 'Honest warnings. LLMs don\'t listen to the song — they work from what you tell them about it. If your song structure description is off by a few seconds, the lights will be off by a few seconds. They also tend to repeat patterns more than a human would, so the shows can feel mechanical. And for longer tracks, the model\'s attention drifts and later sections can become sloppy. Use the LLM output as a starting point, not a finished product.',
+          },
+          {
+            type: 'heading',
+            text: 'Dedicated AI tools that analyse audio',
+          },
+          {
+            type: 'paragraph',
+            text: 'A different category of tools analyses the audio directly — they extract beats, drops, intensity peaks, and build a .fseq from that. TLGEN is one example in this space. These tools give you a more musically accurate result than an LLM because they actually listen to the song. The downside: less creative control, a more generic feel, and no refinement step. You get what the algorithm decides.',
+          },
+          {
+            type: 'heading',
+            text: 'LightShow Studio — manual precision, with AI when you want it',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio is built first and foremost for creators who want full control. The interactive 3D model, the visual timeline synced to the waveform, the millisecond-precision event editor — that\'s the heart of the app. If you want to place a flash exactly on the word "fire" at 2:14.235, you can.',
+          },
+          {
+            type: 'paragraph',
+            text: 'But the app also includes an AI generator. Drop in your audio, tap generate, and you get a complete first draft in seconds. From there, you can refine — extend a section, adjust a channel, polish the chorus — without ever leaving the app. That\'s the workflow we recommend: let AI do the skeleton, then make it yours.',
+          },
+          {
+            type: 'heading',
+            text: 'When to use AI, when to build manually',
+          },
+          {
+            type: 'list',
+            items: [
+              'AI: a quick show for a road trip, exploring what a new song could look like, a first draft you\'ll then refine.',
+              'Manual: a signature show tied to specific lyrics, a demo for social media, something you\'re proud enough to share.',
+              'Hybrid (recommended): generate with AI, then hand-tune the chorus and the drops — 80% of the effect for 20% of the work.',
+            ],
+          },
+          {
+            type: 'cta',
+            text: 'Try LightShow Studio — AI generation + full manual editor \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      fr: {
+        title: 'Créer un Tesla Light Show avec l\u2019IA — guide complet',
+        description:
+          'Comment utiliser concrètement l\u2019IA pour générer un Tesla Light Show en 2026\u00a0: LLM généralistes comme Claude, générateurs audio dédiés, et apps avec IA intégrée. Avec un exemple de prompt qui fonctionne.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Construire un Tesla Light Show à la main, ça prend des heures. Tu t\u2019installes devant une timeline, tu places des évènements sur chaque temps, tu affines la synchro, tu ré-exportes, tu testes. C\u2019est gratifiant — mais c\u2019est lent. Pour un premier jet, pour un show vite fait, ou juste pour avoir quelque chose à lancer sur un road trip, l\u2019IA peut faire l\u2019essentiel du boulot. Voici comment utiliser concrètement l\u2019IA pour générer un Tesla Light Show en 2026.',
+          },
+          {
+            type: 'image',
+            src: aiLightshowImg,
+            alt: 'Tesla Light Show généré par IA',
+            caption: 'L\u2019IA peut te faire passer du fichier audio au .fseq jouable en quelques minutes',
+          },
+          {
+            type: 'heading',
+            text: 'Trois vraies façons d\u2019utiliser l\u2019IA pour un Tesla Light Show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Quand on parle de «\u00a0Tesla Light Show avec IA\u00a0», on mélange souvent trois approches très différentes. Chacune a ses compromis.',
+          },
+          {
+            type: 'list',
+            items: [
+              'Les LLM généralistes (Claude, GPT, Gemini)\u00a0: tu décris ce que tu veux, le modèle sort un fichier de séquence que tu convertis ensuite en .fseq.',
+              'Les générateurs en ligne dédiés (TLGEN en est un)\u00a0: tu uploades un MP3, l\u2019outil analyse l\u2019audio et produit directement un .fseq.',
+              'Les apps de création avec IA intégrée (comme LightShow Studio)\u00a0: tu génères dans le même outil où tu peux ensuite éditer, affiner et exporter.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Utiliser Claude ou ChatGPT pour générer un show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Les LLM modernes sont tout à fait capables de produire un fichier de light show utilisable. L\u2019astuce\u00a0: ils ne génèrent pas du .fseq binaire directement — ils sont bien meilleurs pour produire des séquences xLights (.xsq, en XML), que tu ouvres ensuite dans xLights pour exporter en .fseq. Considère le LLM comme un rédacteur de séquence, pas comme un encodeur de fichier.',
+          },
+          {
+            type: 'paragraph',
+            text: 'La qualité du résultat dépend presque entièrement du prompt. Un prompt vague te donne un show vague et ennuyeux. Un prompt détaillé — avec la structure du morceau, le BPM, le mapping des canaux Tesla, et le style que tu veux — te donne quelque chose qui vaut la peine d\u2019être ouvert.',
+          },
+          {
+            type: 'heading',
+            text: 'Un exemple de prompt qui fonctionne vraiment',
+          },
+          {
+            type: 'paragraph',
+            text: 'Voici un modèle de prompt à adapter. Il donne au modèle assez de structure pour produire quelque chose de cohérent plutôt qu\u2019un pattern aléatoire\u00a0:',
+          },
+          {
+            type: 'paragraph',
+            text: '«\u00a0Génère une séquence xLights (.xsq) pour un light show Tesla Model Y. Morceau\u00a0: Thunderstruck de AC/DC — 4:52, 133 BPM. Séquence à 50 fps (frames de 20 ms, pas de temps recommandé par Tesla). Utilise 48 canaux\u00a0: canaux 1-8 pour les phares et antibrouillards (PWM, 0-255), 9-16 pour les clignotants (binaire), 17-24 pour feux arrière et stop, 25-32 pour rétros et vitres, 33-48 pour les auxiliaires (trappe de charge, coffre). Structure\u00a0: intro 0:00-0:27 — pulses des phares sur le riff de guitare, alternance gauche/droite. Premier couplet 0:27-1:02 — fondus subtils, clignotants sur la caisse claire. Refrain 1:02-1:32 — bursts pleine puissance, toutes les lumières sur les temps forts, vitres qui descendent sur le mot thunder. Garde les transitions sur le temps. Sors le XML .xsq complet.\u00a0»',
+          },
+          {
+            type: 'paragraph',
+            text: 'Ce qui rend ce prompt efficace\u00a0: la référence au morceau, le BPM, le mapping explicite des canaux, la fréquence d\u2019images, et une structure datée. Le modèle n\u2019a pas à deviner. Tu devras quand même ouvrir le résultat dans xLights, vérifier la synchro avec la waveform, et ajuster — mais tu pars d\u2019un vrai premier jet, pas d\u2019une séquence vide.',
+          },
+          {
+            type: 'heading',
+            text: 'Les limites des shows générés par LLM',
+          },
+          {
+            type: 'paragraph',
+            text: 'Soyons francs. Les LLM n\u2019écoutent pas la chanson — ils travaillent à partir de ce que tu leur en dis. Si ta description de la structure du morceau est décalée de quelques secondes, les lumières seront décalées de quelques secondes. Ils ont aussi tendance à répéter les patterns plus qu\u2019un humain ne le ferait, ce qui peut donner un rendu mécanique. Et sur les morceaux longs, l\u2019attention du modèle dérive et les dernières sections peuvent devenir approximatives. Utilise la sortie du LLM comme point de départ, pas comme produit fini.',
+          },
+          {
+            type: 'heading',
+            text: 'Les outils IA dédiés qui analysent l\u2019audio',
+          },
+          {
+            type: 'paragraph',
+            text: 'Une autre catégorie d\u2019outils analyse directement l\u2019audio — ils extraient les temps, les drops, les pics d\u2019intensité, et construisent un .fseq à partir de ça. TLGEN est un exemple dans ce créneau. Ces outils donnent un résultat musicalement plus juste qu\u2019un LLM parce qu\u2019ils écoutent réellement le morceau. Le revers\u00a0: moins de contrôle créatif, un rendu plus générique, et pas d\u2019étape de retouche. Tu obtiens ce que l\u2019algo décide.',
+          },
+          {
+            type: 'heading',
+            text: 'LightShow Studio — précision manuelle, IA quand tu veux',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio est pensé avant tout pour les créateurs qui veulent le contrôle total. Le modèle 3D interactif, la timeline visuelle synchronisée avec la waveform, l\u2019éditeur d\u2019évènements à la milliseconde — c\u2019est le cœur de l\u2019app. Si tu veux placer un flash exactement sur le mot «\u00a0feu\u00a0» à 2:14.235, tu peux.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Mais l\u2019app inclut aussi un générateur IA. Tu déposes ton audio, tu tapes générer, et tu obtiens un premier jet complet en quelques secondes. À partir de là, tu peux affiner — prolonger une section, ajuster un canal, polir le refrain — sans jamais quitter l\u2019app. C\u2019est le workflow qu\u2019on recommande\u00a0: laisse l\u2019IA faire le squelette, et rends-le tien.',
+          },
+          {
+            type: 'heading',
+            text: 'Quand utiliser l\u2019IA, quand construire à la main',
+          },
+          {
+            type: 'list',
+            items: [
+              'IA\u00a0: un show rapide pour un road trip, l\u2019exploration d\u2019une nouvelle chanson, un premier jet que tu vas ensuite affiner.',
+              'Manuel\u00a0: un show signature calé sur des paroles précises, une démo pour les réseaux, quelque chose dont tu seras fier de partager.',
+              'Hybride (recommandé)\u00a0: génère avec l\u2019IA, puis peaufine à la main le refrain et les drops — 80\u00a0% de l\u2019effet pour 20\u00a0% du travail.',
+            ],
+          },
+          {
+            type: 'cta',
+            text: 'Essaie LightShow Studio — génération IA + éditeur manuel complet \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      de: {
+        title: 'Tesla Light Show mit KI erstellen — Der komplette Guide',
+        description:
+          'Wie Sie 2026 KI praktisch nutzen, um einen Tesla Light Show zu generieren: allgemeine LLMs wie Claude, spezialisierte Audio-Generatoren und Apps mit eingebauter KI. Mit funktionierendem Beispiel-Prompt.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Einen Tesla Light Show von Hand zu bauen, kostet Stunden. Sie sitzen an einer Timeline, platzieren Events auf jeden Beat, feintunen das Timing, exportieren erneut, testen. Befriedigend — aber langsam. Für einen ersten Entwurf oder einen schnellen Show für einen Roadtrip kann KI einen Großteil der Arbeit übernehmen. Hier ist ein praktischer Überblick, wie Sie KI wirklich nutzen, um 2026 einen Tesla Light Show zu generieren.',
+          },
+          {
+            type: 'image',
+            src: aiLightshowImg,
+            alt: 'KI-generierter Tesla Light Show',
+            caption: 'KI bringt Sie vom Audiofile zum spielbaren .fseq in wenigen Minuten',
+          },
+          {
+            type: 'heading',
+            text: 'Drei echte Wege, KI für einen Tesla Light Show zu nutzen',
+          },
+          {
+            type: 'list',
+            items: [
+              'Allgemeine LLMs (Claude, GPT, Gemini): Sie beschreiben, was Sie wollen, das Modell liefert eine Sequenzdatei, die Sie in .fseq konvertieren.',
+              'Spezialisierte Online-Generatoren (TLGEN ist ein Beispiel): Sie laden ein MP3 hoch, das Tool analysiert das Audio und erzeugt direkt ein .fseq.',
+              'Kreations-Apps mit eingebauter KI (wie LightShow Studio): Sie generieren im selben Tool, in dem Sie auch bearbeiten und exportieren.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Claude oder ChatGPT für einen Show nutzen',
+          },
+          {
+            type: 'paragraph',
+            text: 'Moderne LLMs können absolut brauchbare Light-Show-Dateien erstellen. Der Trick: sie generieren nicht direkt binäres .fseq — sie sind viel besser darin, xLights-Sequenzdateien (.xsq, XML) zu produzieren, die Sie dann in xLights öffnen und als .fseq exportieren. Betrachten Sie das LLM als Sequenz-Autor, nicht als Datei-Encoder.',
+          },
+          {
+            type: 'paragraph',
+            text: 'Die Qualität des Ergebnisses hängt fast vollständig vom Prompt ab. Ein vager Prompt bringt eine vage, langweilige Show. Ein detaillierter Prompt — mit Songstruktur, BPM, Tesla-Kanal-Mapping und gewünschtem Stil — bringt etwas, das sich zu öffnen lohnt.',
+          },
+          {
+            type: 'heading',
+            text: 'Ein funktionierendes Beispiel-Prompt',
+          },
+          {
+            type: 'paragraph',
+            text: '„Generiere eine xLights-Sequenz (.xsq) für einen Tesla Model Y Light Show. Song: Thunderstruck von AC/DC — 4:52, 133 BPM. Sequenz bei 50 fps (20-ms-Frames, von Tesla empfohlene Step-Time). 48 Kanäle: 1-8 Scheinwerfer/Nebelscheinwerfer (PWM), 9-16 Blinker, 17-24 Rückleuchten, 25-32 Spiegel/Fenster, 33-48 Auxiliary. Struktur: Intro 0:00-0:27 — Puls der Scheinwerfer auf dem Gitarren-Riff, abwechselnd links/rechts. Refrain 1:02-1:32 — volle Power-Bursts auf den Betonungen. Gib das vollständige .xsq-XML aus."',
+          },
+          {
+            type: 'heading',
+            text: 'Die Grenzen von LLM-generierten Shows',
+          },
+          {
+            type: 'paragraph',
+            text: 'LLMs hören den Song nicht — sie arbeiten mit dem, was Sie ihnen darüber sagen. Wenn Ihre Strukturbeschreibung um ein paar Sekunden verschoben ist, sind die Lichter um ein paar Sekunden verschoben. Sie wiederholen Muster auch stärker als ein Mensch. Nutzen Sie den Output als Ausgangspunkt, nicht als fertiges Produkt.',
+          },
+          {
+            type: 'heading',
+            text: 'LightShow Studio — manuelle Präzision, KI wenn Sie wollen',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio ist zuerst für Kreateure gebaut, die volle Kontrolle wollen: interaktives 3D-Modell, visuelle Timeline synchron zur Waveform, millisekundengenauer Event-Editor. Aber die App enthält auch einen KI-Generator: Audio reinlegen, „Generieren" tippen, in Sekunden ein kompletter Entwurf. Dann verfeinern Sie, ohne die App zu verlassen. Das empfohlene Workflow: KI macht das Skelett, Sie machen es persönlich.',
+          },
+          {
+            type: 'cta',
+            text: 'Testen Sie LightShow Studio — KI-Generierung + voller manueller Editor \u2192',
+            href: '/#download',
+          },
+        ],
+      },
+      es: {
+        title: 'Crear un Tesla Light Show con IA — Guía completa',
+        description:
+          'Cómo usar IA en la práctica para generar un Tesla Light Show en 2026: LLMs generales como Claude, generadores de audio dedicados y apps con IA integrada. Con un prompt de ejemplo que funciona.',
+        content: [
+          {
+            type: 'paragraph',
+            text: 'Construir un Tesla Light Show a mano lleva horas. Te sientas frente a una timeline, colocas eventos en cada beat, afinas el timing, reexportas, pruebas. Es gratificante — pero lento. Para un primer borrador o un show rápido para un viaje por carretera, la IA puede hacer gran parte del trabajo. Aquí tienes una visión práctica de cómo usar IA para generar un Tesla Light Show en 2026.',
+          },
+          {
+            type: 'image',
+            src: aiLightshowImg,
+            alt: 'Tesla Light Show generado por IA',
+            caption: 'La IA puede llevarte del archivo de audio al .fseq reproducible en minutos',
+          },
+          {
+            type: 'heading',
+            text: 'Tres formas reales de usar IA para un Tesla Light Show',
+          },
+          {
+            type: 'list',
+            items: [
+              'LLMs generales (Claude, GPT, Gemini): describes lo que quieres, el modelo genera un archivo de secuencia que luego conviertes a .fseq.',
+              'Generadores online dedicados (TLGEN es un ejemplo): subes un MP3, la herramienta analiza el audio y genera un .fseq directamente.',
+              'Apps de creación con IA integrada (como LightShow Studio): generas en la misma herramienta donde luego editas y exportas.',
+            ],
+          },
+          {
+            type: 'heading',
+            text: 'Usar Claude o ChatGPT para generar un show',
+          },
+          {
+            type: 'paragraph',
+            text: 'Los LLMs modernos pueden producir un archivo de light show usable. El truco: no generan .fseq binario directamente — son mucho mejores produciendo secuencias xLights (.xsq, XML), que luego abres en xLights para exportar como .fseq. Trata al LLM como un redactor de secuencia, no como un codificador de archivos.',
+          },
+          {
+            type: 'paragraph',
+            text: 'La calidad del resultado depende casi por completo del prompt. Un prompt vago da un show vago. Un prompt detallado — con estructura del tema, BPM, mapeo de canales Tesla y estilo deseado — da algo que merece abrirse.',
+          },
+          {
+            type: 'heading',
+            text: 'Un ejemplo de prompt que funciona',
+          },
+          {
+            type: 'paragraph',
+            text: '"Genera una secuencia xLights (.xsq) para un light show Tesla Model Y. Tema: Thunderstruck de AC/DC — 4:52, 133 BPM. Secuencia a 50 fps (frames de 20 ms, paso de tiempo recomendado por Tesla). 48 canales: 1-8 faros y antinieblas (PWM), 9-16 intermitentes, 17-24 luces traseras, 25-32 espejos/ventanas, 33-48 auxiliares. Estructura: intro 0:00-0:27 — pulsos de faros en el riff, alternando izquierda/derecha. Estribillo 1:02-1:32 — ráfagas a máxima potencia en los tiempos fuertes. Genera el XML .xsq completo."',
+          },
+          {
+            type: 'heading',
+            text: 'Los límites de los shows generados por LLM',
+          },
+          {
+            type: 'paragraph',
+            text: 'Seamos sinceros. Los LLMs no escuchan la canción — trabajan con lo que les dices. Si tu descripción está desfasada unos segundos, las luces también. Tienden a repetir patrones más que un humano. Usa la salida del LLM como punto de partida, no como producto final.',
+          },
+          {
+            type: 'heading',
+            text: 'LightShow Studio — precisión manual, IA cuando quieras',
+          },
+          {
+            type: 'paragraph',
+            text: 'LightShow Studio está pensado sobre todo para creadores que quieren control total: modelo 3D interactivo, timeline visual sincronizada con la waveform, editor de eventos a la milisegundo. Pero la app también incluye un generador con IA: sueltas tu audio, pulsas generar, y tienes un primer borrador completo en segundos. Desde ahí refinas sin salir de la app. El workflow recomendado: que la IA haga el esqueleto, tú lo haces tuyo.',
+          },
+          {
+            type: 'cta',
+            text: 'Prueba LightShow Studio — generación IA + editor manual completo \u2192',
             href: '/#download',
           },
         ],
